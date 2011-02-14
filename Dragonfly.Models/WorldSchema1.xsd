@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LevelSchema"
+    targetNamespace="http://eaket.com/games/dragonfly/WorldSchema1"
+    elementFormDefault="qualified"
+    xmlns="http://eaket.com/games/dragonfly/WorldSchema1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+
+
+  <!-- common -->
+  <xs:complexType name="vector2">
+    <xs:attribute name="x" type="xs:float" />
+    <xs:attribute name="y" type="xs:float" />
+  </xs:complexType>
+  
+  <!-- World Info-->
+  <xs:complexType name="worldinfo">
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attribute name="description" type="xs:string" />
+    <xs:attribute name="lang" type="xs:language" />
+  </xs:complexType>
+  
+  <!-- Physics Engine-->
+  <xs:complexType name="physicssettings">
+    <xs:sequence>
+      <xs:element name="gravity" type="vector2" />
+    </xs:sequence>
+  </xs:complexType>
+ 
+  <!-- Valid World Elements-->
+  <xs:complexType name="worldElements">
+    <xs:sequence>
+      <xs:element name="boxelement" type="boxelement" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  
+  <!-- World Element-->
+    <xs:complexType name="worldelement">
+      <xs:sequence>
+        <xs:element name="position" type="vector2" />
+      </xs:sequence>
+    </xs:complexType>
+
+  <xs:complexType name="boxelement">
+    <xs:complexContent>
+      <xs:extension base="worldelement">
+        <xs:sequence>
+          <xs:element name="size" type="vector2" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>  
+    
+    
+  </xs:complexType>
+   
+  <!-- Root Element-->
+  <xs:element name="world">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="worldinfo" type="worldinfo" minOccurs="1"/>
+        <xs:element name="physicssettings" type="physicssettings" minOccurs="1" maxOccurs="1" />
+        <xs:element name="worldelements" type="worldElements" maxOccurs="1" /> 
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
