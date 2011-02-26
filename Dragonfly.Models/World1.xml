@@ -1,18 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<world
+<World
   xmlns="http://eaket.com/games/dragonfly/WorldSchema1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://eaket.com/games/dragonfly/WorldSchema1 WorldSchema1.xsd">
 
-  <worldinfo name="Test Level 1" description="Testing xml" lang="en"/>
-  <physicssettings>
-    <gravity x="0" y="9.81"/>
-  </physicssettings>
-  <worldelements>
-    <boxelement>
-      <position x="500" y="500"/>
-      
-   
-    </boxelement>
-  </worldelements>
-</world>
+  <WorldInfo Name="Test Level 1" Description="Testing xml" Lang="en"/>
+  <PhysicsSettings>
+    <Gravity X="0" Y="9.81"/>
+  </PhysicsSettings>
+  <WorldElements>
+    <BoxElement>
+      <Position X="500" Y="500"/>
+      <Body BodyType="Dynamic" Mass="1" />
+      <Size X="10" Y="10"/>  
+    </BoxElement>
+    <PolygonElement>
+      <Position X="500" Y="500"/>
+      <Body BodyType="Static" Mass="1"/>
+      <Vertices>5,5 15,1</Vertices>
+    </PolygonElement>
+    
+    
+    
+  </WorldElements>
+</World>
