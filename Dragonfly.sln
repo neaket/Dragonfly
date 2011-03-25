@@ -1,10 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dragonfly", "Dragonfly\Dragonfly\Dragonfly.csproj", "{FFB91CF4-2013-4857-943B-7CBA76250242}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonflyContent", "Dragonfly\DragonflyContent\DragonflyContent.contentproj", "{0548AD60-D055-4250-8D70-17382BD381CE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dragonfly.Models", "Dragonfly.Models\Dragonfly.Models.csproj", "{E90ECD1A-E0AF-4271-B6A0-87382720A075}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FDAC481B-E743-4AF3-8CE6-873BA35273F9}"
@@ -31,38 +27,6 @@ Global
 		Release|Xbox 360 = Release|Xbox 360
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Debug|Any CPU.ActiveCfg = Debug|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Debug|Mixed Platforms.ActiveCfg = Debug|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Debug|Mixed Platforms.Build.0 = Debug|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Debug|Mixed Platforms.Deploy.0 = Debug|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Debug|Windows Phone.Deploy.0 = Debug|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Debug|x86.ActiveCfg = Debug|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Debug|x86.Build.0 = Debug|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Debug|Xbox 360.ActiveCfg = Debug|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Debug|Xbox 360.Build.0 = Debug|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Release|Any CPU.ActiveCfg = Release|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Release|Mixed Platforms.ActiveCfg = Release|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Release|Mixed Platforms.Build.0 = Release|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Release|Mixed Platforms.Deploy.0 = Release|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Release|Windows Phone.Build.0 = Release|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Release|Windows Phone.Deploy.0 = Release|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Release|x86.ActiveCfg = Release|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Release|x86.Build.0 = Release|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Release|Xbox 360.ActiveCfg = Release|Windows Phone
-		{FFB91CF4-2013-4857-943B-7CBA76250242}.Release|Xbox 360.Build.0 = Release|Windows Phone
-		{0548AD60-D055-4250-8D70-17382BD381CE}.Debug|Any CPU.ActiveCfg = Debug|Windows Phone
-		{0548AD60-D055-4250-8D70-17382BD381CE}.Debug|Mixed Platforms.ActiveCfg = Debug|Windows Phone
-		{0548AD60-D055-4250-8D70-17382BD381CE}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
-		{0548AD60-D055-4250-8D70-17382BD381CE}.Debug|x86.ActiveCfg = Debug|Windows Phone
-		{0548AD60-D055-4250-8D70-17382BD381CE}.Debug|Xbox 360.ActiveCfg = Debug|Windows Phone
-		{0548AD60-D055-4250-8D70-17382BD381CE}.Release|Any CPU.ActiveCfg = Release|Windows Phone
-		{0548AD60-D055-4250-8D70-17382BD381CE}.Release|Mixed Platforms.ActiveCfg = Release|Windows Phone
-		{0548AD60-D055-4250-8D70-17382BD381CE}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
-		{0548AD60-D055-4250-8D70-17382BD381CE}.Release|x86.ActiveCfg = Release|Windows Phone
-		{0548AD60-D055-4250-8D70-17382BD381CE}.Release|Xbox 360.ActiveCfg = Release|Windows Phone
 		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Debug|Any CPU.ActiveCfg = Debug|Windows Phone
 		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Debug|Mixed Platforms.ActiveCfg = Debug|Windows Phone
 		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Debug|Mixed Platforms.Build.0 = Debug|Windows Phone

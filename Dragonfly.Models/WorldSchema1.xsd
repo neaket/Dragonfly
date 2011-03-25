@@ -41,7 +41,7 @@
   <xs:complexType name="WorldInfo">
     <xs:attribute name="Name" type="xs:string" />
     <xs:attribute name="Description" type="xs:string" />
-    <xs:attribute name="Lang" type="xs:language" />
+    <xs:attribute name="Language" type="xs:language" />
   </xs:complexType>
   
   <!-- Physics Engine-->

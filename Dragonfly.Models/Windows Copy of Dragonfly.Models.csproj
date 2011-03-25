@@ -87,16 +87,30 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Common\CommonConstants.cs" />
+    <Compile Include="Entities\Physics\PhysicsSettingsEntity.cs" />
+    <Compile Include="Entities\WorldElements\BoxElementEntity.cs" />
+    <Compile Include="Entities\WorldElements\CircleElementEntity.cs" />
+    <Compile Include="Entities\WorldElements\ElipsisElementEntity.cs" />
+    <Compile Include="Entities\WorldElements\PolygonElementEntity.cs" />
+    <Compile Include="Entities\WorldElements\WorldElementEntity.cs" />
+    <Compile Include="Entities\World\WorldEntity.cs" />
+    <Compile Include="Entities\World\WorldInfoEntity.cs" />
     <Compile Include="Levels\IGameElement.cs" />
     <Compile Include="Levels\IXmlContent.cs" />
     <Compile Include="Levels\LevelConstants.cs" />
     <Compile Include="Levels\LevelModel.cs" />
-    <Compile Include="Physics\PhysicsSettingsEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WorldElements\BoxElementEntity.cs" />
-    <Compile Include="WorldElements\WorldElementEntity.cs" />
-    <Compile Include="World\WorldEntity.cs" />
-    <Compile Include="World\WorldInfoEntity.cs" />
+    <Compile Include="Transformers\Common\EntityXElementTransformer.cs" />
+    <Compile Include="Transformers\Common\IEntityXElementTransformer.cs" />
+    <Compile Include="Transformers\Common\TransformerSetup.cs" />
+    <Compile Include="Transformers\Common\Vector2Transformer.cs" />
+    <Compile Include="Transformers\Physics\PhysicsSettingsTransformer.cs" />
+    <Compile Include="Transformers\WorldElements\BoxElementTransformer.cs" />
+    <Compile Include="Transformers\WorldElements\CircleElementTransformer.cs" />
+    <Compile Include="Transformers\WorldElements\ElipsisElementTransformer.cs" />
+    <Compile Include="Transformers\WorldElements\PolygonElementTransformer.cs" />
+    <Compile Include="Transformers\WorldElements\WorldElementTransformer.cs" />
+    <Compile Include="Transformers\World\WorldTransformer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">

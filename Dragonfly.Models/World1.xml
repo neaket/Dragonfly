@@ -4,7 +4,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://eaket.com/games/dragonfly/WorldSchema1 WorldSchema1.xsd">
 
-  <WorldInfo Name="Test Level 1" Description="Testing xml" Lang="en"/>
+  <WorldInfo Name="Test Level 1" Description="Testing xml" Language="en"/>
   <PhysicsSettings>
     <Gravity X="0" Y="9.81"/>
   </PhysicsSettings>

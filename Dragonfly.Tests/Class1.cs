@@ -21,5 +21,11 @@ namespace Dragonfly.Tests.Models.Levels
             Assert.AreEqual(true, true);
 
         }
+
+        [Test]
+        public void Fail()
+        {
+            Assert.Fail();
+        }
     }
 }
