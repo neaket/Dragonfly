@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dragonfly.Models", "Dragonfly.Models\Dragonfly.Models.csproj", "{E90ECD1A-E0AF-4271-B6A0-87382720A075}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FDAC481B-E743-4AF3-8CE6-873BA35273F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows Copy of Dragonfly.Models", "Dragonfly.Models\Windows Copy of Dragonfly.Models.csproj", "{4D038C25-2159-46C9-A330-CE17D7AB3684}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dragonfly.Tests", "Dragonfly.Tests\Dragonfly.Tests.csproj", "{2EFFFC06-6FCF-4ACE-9E88-E68E938E87C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farseer Physics  3.2 WP7", "Farseer Physics Engine 3.2 WP7\Farseer Physics  3.2 WP7.csproj", "{FB9FD837-9D1C-4878-B5F6-E79A44F46E7E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dragonfly", "Dragonfly.Game\Dragonfly.Game\Dragonfly.csproj", "{3C57C0F3-241A-43DF-95DE-36FF044B2D09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dragonfly.Engine", "Dragonfly.Engine\Dragonfly.Engine.csproj", "{B4D10E27-D60D-4CF0-9ED3-0C8FD5E1A349}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dragonfly.GameContent", "Dragonfly.Game\Dragonfly.GameContent\Dragonfly.GameContent.contentproj", "{F49E0B41-D14E-4918-93BC-36894A51A7CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farseer Physics XNA WP7", "Farseer Physics Engine 3.3 XNA\Farseer Physics XNA WP7.csproj", "{AA6CB78E-9484-4843-8613-54CD2BF1E948}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,24 +27,6 @@ Global
 		Release|Xbox 360 = Release|Xbox 360
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Debug|Any CPU.ActiveCfg = Debug|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Debug|Mixed Platforms.ActiveCfg = Debug|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Debug|Mixed Platforms.Build.0 = Debug|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Debug|x86.ActiveCfg = Debug|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Debug|x86.Build.0 = Debug|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Debug|Xbox 360.ActiveCfg = Debug|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Debug|Xbox 360.Build.0 = Debug|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Release|Any CPU.ActiveCfg = Release|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Release|Mixed Platforms.ActiveCfg = Release|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Release|Mixed Platforms.Build.0 = Release|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Release|Windows Phone.Build.0 = Release|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Release|x86.ActiveCfg = Release|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Release|x86.Build.0 = Release|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Release|Xbox 360.ActiveCfg = Release|Windows Phone
-		{E90ECD1A-E0AF-4271-B6A0-87382720A075}.Release|Xbox 360.Build.0 = Release|Windows Phone
 		{4D038C25-2159-46C9-A330-CE17D7AB3684}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{4D038C25-2159-46C9-A330-CE17D7AB3684}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{4D038C25-2159-46C9-A330-CE17D7AB3684}.Debug|Mixed Platforms.Build.0 = Debug|x86
@@ -73,34 +55,48 @@ Global
 		{2EFFFC06-6FCF-4ACE-9E88-E68E938E87C2}.Release|x86.ActiveCfg = Release|x86
 		{2EFFFC06-6FCF-4ACE-9E88-E68E938E87C2}.Release|x86.Build.0 = Release|x86
 		{2EFFFC06-6FCF-4ACE-9E88-E68E938E87C2}.Release|Xbox 360.ActiveCfg = Release|x86
-		{FB9FD837-9D1C-4878-B5F6-E79A44F46E7E}.Debug|Any CPU.ActiveCfg = Debug|Windows Phone
-		{FB9FD837-9D1C-4878-B5F6-E79A44F46E7E}.Debug|Mixed Platforms.ActiveCfg = Debug|Windows Phone
-		{FB9FD837-9D1C-4878-B5F6-E79A44F46E7E}.Debug|Mixed Platforms.Build.0 = Debug|Windows Phone
-		{FB9FD837-9D1C-4878-B5F6-E79A44F46E7E}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
-		{FB9FD837-9D1C-4878-B5F6-E79A44F46E7E}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
-		{FB9FD837-9D1C-4878-B5F6-E79A44F46E7E}.Debug|x86.ActiveCfg = Debug|Windows Phone
-		{FB9FD837-9D1C-4878-B5F6-E79A44F46E7E}.Debug|Xbox 360.ActiveCfg = Debug|Windows Phone
-		{FB9FD837-9D1C-4878-B5F6-E79A44F46E7E}.Release|Any CPU.ActiveCfg = Release|Windows Phone
-		{FB9FD837-9D1C-4878-B5F6-E79A44F46E7E}.Release|Mixed Platforms.ActiveCfg = Release|Windows Phone
-		{FB9FD837-9D1C-4878-B5F6-E79A44F46E7E}.Release|Mixed Platforms.Build.0 = Release|Windows Phone
-		{FB9FD837-9D1C-4878-B5F6-E79A44F46E7E}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
-		{FB9FD837-9D1C-4878-B5F6-E79A44F46E7E}.Release|Windows Phone.Build.0 = Release|Windows Phone
-		{FB9FD837-9D1C-4878-B5F6-E79A44F46E7E}.Release|x86.ActiveCfg = Release|Windows Phone
-		{FB9FD837-9D1C-4878-B5F6-E79A44F46E7E}.Release|Xbox 360.ActiveCfg = Release|Windows Phone
-		{B4D10E27-D60D-4CF0-9ED3-0C8FD5E1A349}.Debug|Any CPU.ActiveCfg = Debug|Windows Phone
-		{B4D10E27-D60D-4CF0-9ED3-0C8FD5E1A349}.Debug|Mixed Platforms.ActiveCfg = Debug|Windows Phone
-		{B4D10E27-D60D-4CF0-9ED3-0C8FD5E1A349}.Debug|Mixed Platforms.Build.0 = Debug|Windows Phone
-		{B4D10E27-D60D-4CF0-9ED3-0C8FD5E1A349}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
-		{B4D10E27-D60D-4CF0-9ED3-0C8FD5E1A349}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
-		{B4D10E27-D60D-4CF0-9ED3-0C8FD5E1A349}.Debug|x86.ActiveCfg = Debug|Windows Phone
-		{B4D10E27-D60D-4CF0-9ED3-0C8FD5E1A349}.Debug|Xbox 360.ActiveCfg = Debug|Windows Phone
-		{B4D10E27-D60D-4CF0-9ED3-0C8FD5E1A349}.Release|Any CPU.ActiveCfg = Release|Windows Phone
-		{B4D10E27-D60D-4CF0-9ED3-0C8FD5E1A349}.Release|Mixed Platforms.ActiveCfg = Release|Windows Phone
-		{B4D10E27-D60D-4CF0-9ED3-0C8FD5E1A349}.Release|Mixed Platforms.Build.0 = Release|Windows Phone
-		{B4D10E27-D60D-4CF0-9ED3-0C8FD5E1A349}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
-		{B4D10E27-D60D-4CF0-9ED3-0C8FD5E1A349}.Release|Windows Phone.Build.0 = Release|Windows Phone
-		{B4D10E27-D60D-4CF0-9ED3-0C8FD5E1A349}.Release|x86.ActiveCfg = Release|Windows Phone
-		{B4D10E27-D60D-4CF0-9ED3-0C8FD5E1A349}.Release|Xbox 360.ActiveCfg = Release|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Debug|Any CPU.ActiveCfg = Debug|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Debug|Mixed Platforms.ActiveCfg = Debug|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Debug|Mixed Platforms.Build.0 = Debug|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Debug|Mixed Platforms.Deploy.0 = Debug|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Debug|Windows Phone.Deploy.0 = Debug|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Debug|x86.ActiveCfg = Debug|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Debug|Xbox 360.ActiveCfg = Debug|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Release|Any CPU.ActiveCfg = Release|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Release|Mixed Platforms.ActiveCfg = Release|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Release|Mixed Platforms.Build.0 = Release|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Release|Mixed Platforms.Deploy.0 = Release|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Release|Windows Phone.Build.0 = Release|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Release|Windows Phone.Deploy.0 = Release|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Release|x86.ActiveCfg = Release|Windows Phone
+		{3C57C0F3-241A-43DF-95DE-36FF044B2D09}.Release|Xbox 360.ActiveCfg = Release|Windows Phone
+		{F49E0B41-D14E-4918-93BC-36894A51A7CD}.Debug|Any CPU.ActiveCfg = Debug|Windows Phone
+		{F49E0B41-D14E-4918-93BC-36894A51A7CD}.Debug|Mixed Platforms.ActiveCfg = Debug|Windows Phone
+		{F49E0B41-D14E-4918-93BC-36894A51A7CD}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{F49E0B41-D14E-4918-93BC-36894A51A7CD}.Debug|x86.ActiveCfg = Debug|Windows Phone
+		{F49E0B41-D14E-4918-93BC-36894A51A7CD}.Debug|Xbox 360.ActiveCfg = Debug|Windows Phone
+		{F49E0B41-D14E-4918-93BC-36894A51A7CD}.Release|Any CPU.ActiveCfg = Release|Windows Phone
+		{F49E0B41-D14E-4918-93BC-36894A51A7CD}.Release|Mixed Platforms.ActiveCfg = Release|Windows Phone
+		{F49E0B41-D14E-4918-93BC-36894A51A7CD}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+		{F49E0B41-D14E-4918-93BC-36894A51A7CD}.Release|x86.ActiveCfg = Release|Windows Phone
+		{F49E0B41-D14E-4918-93BC-36894A51A7CD}.Release|Xbox 360.ActiveCfg = Release|Windows Phone
+		{AA6CB78E-9484-4843-8613-54CD2BF1E948}.Debug|Any CPU.ActiveCfg = Debug|Windows Phone
+		{AA6CB78E-9484-4843-8613-54CD2BF1E948}.Debug|Mixed Platforms.ActiveCfg = Debug|Windows Phone
+		{AA6CB78E-9484-4843-8613-54CD2BF1E948}.Debug|Mixed Platforms.Build.0 = Debug|Windows Phone
+		{AA6CB78E-9484-4843-8613-54CD2BF1E948}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{AA6CB78E-9484-4843-8613-54CD2BF1E948}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
+		{AA6CB78E-9484-4843-8613-54CD2BF1E948}.Debug|x86.ActiveCfg = Debug|Windows Phone
+		{AA6CB78E-9484-4843-8613-54CD2BF1E948}.Debug|Xbox 360.ActiveCfg = Debug|Windows Phone
+		{AA6CB78E-9484-4843-8613-54CD2BF1E948}.Release|Any CPU.ActiveCfg = Release|Windows Phone
+		{AA6CB78E-9484-4843-8613-54CD2BF1E948}.Release|Mixed Platforms.ActiveCfg = Release|Windows Phone
+		{AA6CB78E-9484-4843-8613-54CD2BF1E948}.Release|Mixed Platforms.Build.0 = Release|Windows Phone
+		{AA6CB78E-9484-4843-8613-54CD2BF1E948}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+		{AA6CB78E-9484-4843-8613-54CD2BF1E948}.Release|Windows Phone.Build.0 = Release|Windows Phone
+		{AA6CB78E-9484-4843-8613-54CD2BF1E948}.Release|x86.ActiveCfg = Release|Windows Phone
+		{AA6CB78E-9484-4843-8613-54CD2BF1E948}.Release|Xbox 360.ActiveCfg = Release|Windows Phone
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

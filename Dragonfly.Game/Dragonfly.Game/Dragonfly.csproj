@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{3C57C0F3-241A-43DF-95DE-36FF044B2D09}</ProjectGuid>
+    <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">Windows Phone</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dragonfly</RootNamespace>
+    <AssemblyName>Dragonfly</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
+    <XnaPlatform>Windows Phone</XnaPlatform>
+    <XnaProfile>Reach</XnaProfile>
+    <XnaCrossPlatformGroupID>f752d687-339d-4891-9ae7-8904a4f2688a</XnaCrossPlatformGroupID>
+    <XnaOutputType>Game</XnaOutputType>
+    <XapFilename>$(AssemblyName).xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <XnaWindowsPhoneManifestTemplate>Properties\WMAppManifest.xml</XnaWindowsPhoneManifestTemplate>
+    <TileImage>Background.png</TileImage>
+    <TileTitle>Dragonfly</TileTitle>
+    <SupportedCultures>
+    </SupportedCultures>
+    <ApplicationIcon>Game.ico</ApplicationIcon>
+    <Thumbnail>GameThumbnail.png</Thumbnail>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Windows Phone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Windows Phone\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS_PHONE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <XnaCompressContent>false</XnaCompressContent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Windows Phone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Windows Phone\Release</OutputPath>
+    <DefineConstants>TRACE;WINDOWS_PHONE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <XnaCompressContent>false</XnaCompressContent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Game">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.GamerServices">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Input.Touch">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Engine\ScreenManager\GameScreen.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\ScreenManager\InputState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\ScreenManager\ScreenController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\World\World.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Transformers\Common\ColorTransformer.cs" />
+    <Compile Include="Models\Transformers\Common\EntityXAttributeTransformer.cs" />
+    <Compile Include="Models\Transformers\Common\IEntityTransformer.cs" />
+    <Compile Include="Models\Transformers\Common\MaterialTransformer.cs" />
+    <Compile Include="Module\Content\MenuResources.cs" />
+    <Compile Include="Module\Levels\Level1.cs" />
+    <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\Common\CommonConstants.cs" />
+    <Compile Include="Models\Entities\Physics\PhysicsSettingsEntity.cs" />
+    <Compile Include="Models\Entities\WorldElements\BoxElementEntity.cs" />
+    <Compile Include="Models\Entities\WorldElements\CircleElementEntity.cs" />
+    <Compile Include="Models\Entities\WorldElements\ElipsisElementEntity.cs" />
+    <Compile Include="Models\Entities\WorldElements\PolygonElementEntity.cs" />
+    <Compile Include="Models\Entities\WorldElements\WorldElementEntity.cs" />
+    <Compile Include="Models\Entities\World\WorldEntity.cs" />
+    <Compile Include="Models\Entities\World\WorldInfoEntity.cs" />
+    <Compile Include="Models\Levels\IGameElement.cs" />
+    <Compile Include="Models\Levels\IXmlContent.cs" />
+    <Compile Include="Models\Levels\LevelConstants.cs" />
+    <Compile Include="Models\Levels\LevelModel.cs" />
+    <Compile Include="Models\Transformers\Common\EntityXElementTransformer.cs" />
+    <Compile Include="Models\Transformers\Common\TransformerSetup.cs" />
+    <Compile Include="Models\Transformers\Common\Vector2Transformer.cs" />
+    <Compile Include="Models\Transformers\Physics\PhysicsSettingsTransformer.cs" />
+    <Compile Include="Models\Transformers\WorldElements\BoxElementTransformer.cs" />
+    <Compile Include="Models\Transformers\WorldElements\CircleElementTransformer.cs" />
+    <Compile Include="Models\Transformers\WorldElements\ElipsisElementTransformer.cs" />
+    <Compile Include="Models\Transformers\WorldElements\PolygonElementTransformer.cs" />
+    <Compile Include="Models\Transformers\WorldElements\WorldElementTransformer.cs" />
+    <Compile Include="Models\Transformers\World\WorldInfoTransformer.cs" />
+    <Compile Include="Models\Transformers\World\WorldTransformer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Module\Content\CommonResources.cs" />
+    <Compile Include="Module\Screens\BackgroundScreen.cs" />
+    <Compile Include="Module\Screens\GameplayScreen.cs" />
+    <Compile Include="Module\Screens\LoadingScreen.cs" />
+    <Compile Include="Module\Screens\MainMenuScreen.cs" />
+    <Compile Include="Module\Screens\MenuEntry.cs" />
+    <Compile Include="Module\Screens\MenuScreen.cs" />
+    <Compile Include="Module\Screens\MessageBoxScreen.cs" />
+    <Compile Include="Module\Screens\OptionsMenuScreen.cs" />
+    <Compile Include="Module\Screens\PlayerIndexEventArgs.cs" />
+    <None Include="Models\WorldSchema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\AppManifest.xml">
+      <XnaPlatformSpecific>true</XnaPlatformSpecific>
+    </None>
+    <None Include="Properties\WMAppManifest.xml">
+      <XnaPlatformSpecific>true</XnaPlatformSpecific>
+    </None>
+    <Compile Include="Program.cs" />
+    <Compile Include="Game1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Game.ico" />
+    <Content Include="GameThumbnail.png" />
+    <Content Include="Background.png">
+      <XnaPlatformSpecific>true</XnaPlatformSpecific>
+    </Content>
+    <Content Include="Models\World1.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Farseer Physics Engine 3.3 XNA\Farseer Physics XNA WP7.csproj">
+      <Project>{AA6CB78E-9484-4843-8613-54CD2BF1E948}</Project>
+      <Name>Farseer Physics XNA WP7</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dragonfly.GameContent\Dragonfly.GameContent.contentproj">
+      <Name>Dragonfly.GameContent %28Content%29</Name>
+      <XnaReferenceType>Content</XnaReferenceType>
+      <Project>{F49E0B41-D14E-4918-93BC-36894A51A7CD}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Module\Common\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
+  <!--
+      To modify your build process, add your task inside one of the targets below and uncomment it. 
+      Other similar extension points exist, see Microsoft.Common.targets.
+      <Target Name="BeforeBuild">
+      </Target>
+      <Target Name="AfterBuild">
+      </Target>
+    -->
+</Project>
