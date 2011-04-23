@@ -7,10 +7,15 @@ using Dragonfly.Models.Entities.WorldElements;
 
 namespace Dragonfly.Models.Entities.World
 {
-    class WorldEntity
+    public class WorldEntity
     {
         public PhysicsSettingsEntity PhysicsSettings { get; set; }
         public List<WorldElementEntity> WorldElements { get; set; }
         public WorldInfoEntity WorldInfo { get; set; }
+
+        public WorldEntity()
+        {
+            WorldElements = new List<WorldElementEntity>();
+        }
     }
 }

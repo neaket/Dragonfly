@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Dragonfly.Models.Entities.Physics
 {
-    class PhysicsSettingsEntity
+    public class PhysicsSettingsEntity
     {
         public Vector2 Gravity { get; set; }
 

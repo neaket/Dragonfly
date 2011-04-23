@@ -6,15 +6,15 @@ using Dragonfly.Models.Transformers.Common;
 using Dragonfly.Models.Entities.WorldElements;
 using System.Xml.Linq;
 using Microsoft.Xna.Framework;
+using Dragonfly.Models.Transformers.Exceptions;
 
 namespace Dragonfly.Models.Transformers.WorldElements
 {
-    class WorldElementTransformer : IEntityXElementTransformer<WorldElementEntity>
+    public class WorldElementTransformer : IEntityXElementTransformer<WorldElementEntity>
     {
         public const string STR_Color = "Color";
+        public const string STR_Material = "Material";
         public const string STR_Position = "Position";
-        public const string STR_WorldElements = "WorldElements";
-
 
         #region Instance
         
@@ -34,36 +34,61 @@ namespace Dragonfly.Models.Transformers.WorldElements
 
         private WorldElementTransformer() 
         {
-            ChildTransformers = new List<Type>();
         }
+
+   
 
         #endregion
 
-        public List<Type> ChildTransformers { get; private set; }
+        private List<IWorldElementTransformer> ChildTransformers = new List<IWorldElementTransformer>() 
+        {
+            RectangleElementTransformer.Instance,
+            CircleElementTransformer.Instance
+        };          
 
-        public void FromEntity(WorldElementEntity entity, XElement xElement)
+
+        public WorldElementEntity ToEntity(XElement xElement)
+        {
+            foreach (var transformer in ChildTransformers)            
+            {
+                if (transformer.EntityName == xElement.Name.LocalName)
+                {
+                    return transformer.ToWorldElementEntity(xElement);
+                }
+            }
+
+            throw new TransformerException(String.Format("World element XElement name '{0}' is unknown."));
+        }
+
+        public XElement ToXElement(WorldElementEntity entity)
+        {
+            foreach (var transformer in ChildTransformers)
+            {
+                if (transformer.Type == entity.GetType())
+                {
+                    return transformer.FromWorldElementEntity(entity);
+                }
+            }
+
+            throw new TransformerException(String.Format("World element entity type '{0}' is unknown."));
+        }
+
+        public void ToEntity(XElement xElement, WorldElementEntity entity)
         {
             entity.Positon = Vector2Transformer.Instance.ToEntity(xElement.Element(STR_Position));
             entity.Color = ColorTransformer.Instance.ToEntity(xElement.Attribute(STR_Color));
             entity.Material = MaterialTransformer.Instance.ToEntity(xElement.Attribute(STR_Material));
-
-            switch (xElement.Name.LocalName)
-            {
-                case RectangleElementTransformer.STR_BoxElement:
-
-                    break;
-                case CircleElementTransformer.STR_CircleElement:
-                    break;
-            }
         }
 
         public void SetupTransformer() { }
 
-        public void XElementToEntity(XElement xElement, WorldElementEntity entity)
+        public void ToXElement(WorldElementEntity entity, XElement xElement)
         {
+            xElement.Add(Vector2Transformer.Instance.ToXElement(entity.Positon, STR_Position));
+            xElement.Add(ColorTransformer.Instance.ToXAttribute(entity.Color, STR_Color));
+            xElement.Add(MaterialTransformer.Instance.ToXAttribute(entity.Material, STR_Material));
 
+            throw new NotImplementedException();
         }
-
-
     }
 }

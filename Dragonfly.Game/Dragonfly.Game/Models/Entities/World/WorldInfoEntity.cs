@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Dragonfly.Models.Entities.World
 {
-    class WorldInfoEntity
+    public class WorldInfoEntity
     {
         public string Name { get; set; }
         public string Description { get; set; }

@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Dragonfly.Models.Entities.WorldElements
 {
-    class RectangleElementEntity : WorldElementEntity
+    public class RectangleElementEntity : WorldElementEntity
     {
         public Vector2 Size { get; set; }
     }

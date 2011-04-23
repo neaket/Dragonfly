@@ -7,7 +7,7 @@ using Dragonfly.Models.Entities.WorldElements;
 
 namespace Dragonfly.Models.Transformers.WorldElements
 {
-    class PolygonElementTransformer : EntityXElementTransformer<PolygonElementEntity>
+    public class PolygonElementTransformer : EntityXElementTransformer<PolygonElementEntity>
     {
         public const string STR_PolygonElement = "PolygonElement";
         
@@ -29,12 +29,13 @@ namespace Dragonfly.Models.Transformers.WorldElements
         private PolygonElementTransformer() { }
         #endregion
 
-        public override void FromEntity(PolygonElementEntity entity, System.Xml.Linq.XElement xElement)
+        public override void ToXElement(PolygonElementEntity entity, System.Xml.Linq.XElement xElement)
         {
+            WorldElementTransformer.Instance.ToXElement(entity, xElement);
             throw new NotImplementedException();
         }
 
-        public override void XElementToEntity(System.Xml.Linq.XElement xElement, PolygonElementEntity entity)
+        public override void ToEntity(System.Xml.Linq.XElement xElement, PolygonElementEntity entity)
         {
             throw new NotImplementedException();
         }

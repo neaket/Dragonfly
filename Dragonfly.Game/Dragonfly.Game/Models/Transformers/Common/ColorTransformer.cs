@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace Dragonfly.Models.Transformers.Common
 {
-    class ColorTransformer : EntityXElementTransformer<Color>
+    public class ColorTransformer : IEntityXAttributeTransformer<Color>
     {
            #region instance
 
@@ -30,14 +30,20 @@ namespace Dragonfly.Models.Transformers.Common
 
         #endregion
 
-        public override void FromEntity(Color entity, XElement xElement)
+        public void ToEntity(XAttribute attribute, Color entity)
         {
             throw new NotImplementedException();
         }
 
-        public override void XElementToEntity(XElement xElement, Color entity)
+        public Color ToEntity(XAttribute attribute)
         {
             throw new NotImplementedException();
         }
+
+        public XAttribute ToXAttribute(Color entity, string name)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

@@ -6,29 +6,32 @@ using System.Xml.Linq;
 
 namespace Dragonfly.Models.Transformers.Common
 {
-    abstract class EntityXElementTransformer<T> : IEntityXElementTransformer<T> where T : new()
+    public abstract class EntityXElementTransformer<T> : IEntityXElementTransformer<T> where T : new()
     {
-        public abstract void FromEntity(T entity, XElement xElement);
+        public abstract void ToXElement(T entity, XElement xElement);
 
-        public XElement FromEntity(T entity, string elementName)
+        public XElement ToXElement(T entity, string elementName)
         {
             XElement xElement = new XElement(elementName);
 
-            FromEntity(entity, xElement);
+            ToXElement(entity, xElement);
 
             return xElement;
         }
 
 
-        public abstract void XElementToEntity(XElement xElement, T entity);
+        public abstract void ToEntity(XElement xElement, T entity);
 
         public T ToEntity(XElement xElement)
         {
             T entity = new T();
 
-            XElementToEntity(xElement, entity);
+            ToEntity(xElement, entity);
 
             return entity;
         }
+
+
+   
     }
 }

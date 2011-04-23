@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Dragonfly.Models.Entities.WorldElements
 {
-    class PolygonElementEntity : WorldElementEntity
+    public class PolygonElementEntity : WorldElementEntity
     {
         public LinkedList<Vector2> Vertices { get; set; }
     }

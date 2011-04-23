@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 namespace Dragonfly.Models.Transformers.Common
 {
-    class Vector2Transformer : EntityXElementTransformer<Vector2>
+    public class Vector2Transformer : EntityXElementTransformer<Vector2>
     {
         private const string STR_X = "X";
         private const string STR_Y = "Y";
@@ -33,13 +33,13 @@ namespace Dragonfly.Models.Transformers.Common
 
         #endregion
 
-        public override void FromEntity(Vector2 entity, XElement xElement)
+        public override void ToXElement(Vector2 entity, XElement xElement)
         {
             xElement.SetAttributeValue(STR_X, entity.X);
             xElement.SetAttributeValue(STR_Y, entity.Y);
         }
 
-        public override void XElementToEntity(XElement xElement, Vector2 entity)
+        public override void ToEntity(XElement xElement, Vector2 entity)
         {
             entity.X = (float)xElement.Attribute(STR_X);
             entity.Y = (float)xElement.Attribute(STR_Y);

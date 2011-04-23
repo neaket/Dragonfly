@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
+using System.Xml.Linq;
 
 namespace Dragonfly.Models.Transformers.Common
 {
-    class MaterialTransformer : EntityXElementTransformer<Texture2D>
+    public class MaterialTransformer : IEntityXAttributeTransformer<Texture2D>
     {
         #region instance
 
@@ -29,14 +30,22 @@ namespace Dragonfly.Models.Transformers.Common
 
         #endregion
 
-        public override void FromEntity(Texture2D entity, System.Xml.Linq.XElement xElement)
+        public void ToEntity(XAttribute attribute, Texture2D entity)
         {
             throw new NotImplementedException();
         }
 
-        public override void XElementToEntity(System.Xml.Linq.XElement xElement, Texture2D entity)
+        public Texture2D ToEntity(XAttribute attribute)
         {
             throw new NotImplementedException();
         }
+
+        public XAttribute ToXAttribute(Texture2D entity, string name)
+        {
+            throw new NotImplementedException();
+        }
+
+
+       
     }
 }

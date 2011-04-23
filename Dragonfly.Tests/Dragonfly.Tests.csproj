@@ -95,13 +95,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\Models\WorldTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dragonfly.Models\Windows Copy of Dragonfly.Models.csproj">
-      <Project>{4D038C25-2159-46C9-A330-CE17D7AB3684}</Project>
-      <Name>Windows Copy of Dragonfly.Models</Name>
+    <ProjectReference Include="..\Dragonfly.Game\Dragonfly.Game\Dragonfly.Windows.csproj">
+      <Project>{044A71EC-84D8-4D85-8AC2-4A6688D07459}</Project>
+      <Name>Dragonfly.Windows</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

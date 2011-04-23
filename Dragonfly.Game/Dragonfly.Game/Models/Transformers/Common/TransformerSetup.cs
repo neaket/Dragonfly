@@ -6,7 +6,7 @@ using Dragonfly.Models.Transformers.World;
 
 namespace Dragonfly.Models.Transformers.Common
 {
-    class TransformerSetup
+    public class TransformerSetup
     {
         public void SetupTransformers()
         {

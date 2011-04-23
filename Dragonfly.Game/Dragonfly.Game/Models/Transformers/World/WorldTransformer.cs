@@ -10,9 +10,10 @@ using Dragonfly.Models.Transformers.WorldElements;
 
 namespace Dragonfly.Models.Transformers.World
 {
-    class WorldTransformer : EntityXElementTransformer<WorldEntity>
+    public class WorldTransformer : EntityXElementTransformer<WorldEntity>
     {
         public const string STR_World = "World";
+        public const string STR_WorldElements = "WorldElements";
 
         #region instance
         
@@ -36,35 +37,31 @@ namespace Dragonfly.Models.Transformers.World
 
         public XElement EntityToXElement(WorldEntity entity) 
         {
-            return FromEntity(entity, STR_World);
+            return ToXElement(entity, STR_World);
         }
 
-        public override void FromEntity(WorldEntity entity, XElement xElement)
+        public override void ToXElement(WorldEntity entity, XElement xElement)
         {
-            xElement.Add(PhysicsSettingsTransformer.Instance.EntityToXElement(entity.PhysicsSettings));
+            xElement.Add(WorldInfoTransformer.Instance.ToXElement(entity.WorldInfo, WorldInfoTransformer.STR_WorldInfo));
+            xElement.Add(PhysicsSettingsTransformer.Instance.ToXElement(entity.PhysicsSettings));
+
+            XElement worldElements = new XElement(STR_WorldElements);
+            foreach (var element in entity.WorldElements)
+            {
+                worldElements.Add(WorldElementTransformer.Instance.ToXElement(element));
+            }
+            xElement.Add(worldElements);
         }
 
-        public override void XElementToEntity(XElement xElement, WorldEntity entity)
+        public override void ToEntity(XElement xElement, WorldEntity entity)
         {
             entity.WorldInfo = WorldInfoTransformer.Instance.ToEntity(xElement.Element(WorldInfoTransformer.STR_WorldInfo));
             entity.PhysicsSettings = PhysicsSettingsTransformer.Instance.ToEntity(xElement.Element(PhysicsSettingsTransformer.STR_PhysicsSettings));
-            
-            //load world elements
-            foreach (var worldElement in xElement.Elements(RectangleElementTransformer.STR_BoxElement))
-            {
-                entity.WorldElements.Add(RectangleElementTransformer.Instance.ToEntity(worldElement));
-            }
 
-            foreach (var worldElement in xElement.Elements(CircleElementTransformer.STR_CircleElement))
+            foreach (var worldElement in xElement.Element(STR_WorldElements).Elements())
             {
-                entity.WorldElements.Add(CircleElementTransformer.Instance.ToEntity(worldElement));
-            }
-
-            foreach (var worldElement in xElement.Elements(ElipsisElementTransformer.STR_ElipsisElement))
-            {
-                entity.WorldElements.Add(ElipsisElementTransformer.Instance.ToEntity(worldElement));
-            }
-
+                entity.WorldElements.Add(WorldElementTransformer.Instance.ToEntity(worldElement));
+            }           
 
         }
     }

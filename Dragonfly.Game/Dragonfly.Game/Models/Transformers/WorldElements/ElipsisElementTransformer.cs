@@ -7,7 +7,7 @@ using Dragonfly.Models.Transformers.Common;
 
 namespace Dragonfly.Models.Transformers.WorldElements
 {
-    class ElipsisElementTransformer : EntityXElementTransformer<ElipsisElementEntity>
+    public class ElipsisElementTransformer : EntityXElementTransformer<ElipsisElementEntity>
     {
         public const string STR_ElipsisElement = "ElipsisElement";
           
@@ -29,12 +29,13 @@ namespace Dragonfly.Models.Transformers.WorldElements
         private ElipsisElementTransformer() { }
         #endregion
 
-        public override void FromEntity(ElipsisElementEntity entity, System.Xml.Linq.XElement xElement)
+        public override void ToXElement(ElipsisElementEntity entity, System.Xml.Linq.XElement xElement)
         {
+            WorldElementTransformer.Instance.ToXElement(entity, xElement);
             throw new NotImplementedException();
         }
 
-        public override void XElementToEntity(System.Xml.Linq.XElement xElement, ElipsisElementEntity entity)
+        public override void ToEntity(System.Xml.Linq.XElement xElement, ElipsisElementEntity entity)
         {
             throw new NotImplementedException();
         }

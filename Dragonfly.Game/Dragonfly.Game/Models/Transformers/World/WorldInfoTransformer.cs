@@ -8,9 +8,12 @@ using System.Xml.Linq;
 
 namespace Dragonfly.Models.Transformers.World
 {
-    class WorldInfoTransformer : EntityXElementTransformer<WorldInfoEntity>
+    public class WorldInfoTransformer : EntityXElementTransformer<WorldInfoEntity>
     {
         public const string STR_WorldInfo = "WorldInfo";
+        public const string STR_Name = "Name";
+        public const string STR_Description = "Description";
+        public const string STR_Language = "Language";
 
         #region Instance
         private static WorldInfoTransformer _Instance;
@@ -30,14 +33,18 @@ namespace Dragonfly.Models.Transformers.World
         private WorldInfoTransformer() { }
         #endregion
 
-        public override void FromEntity(WorldInfoEntity entity, XElement xElement)
+        public override void ToXElement(WorldInfoEntity entity, XElement xElement)
         {
-            throw new NotImplementedException();
+            xElement.Add(StringTransformer.Instance.ToXAttribute(entity.Name, STR_Name));
+            xElement.Add(StringTransformer.Instance.ToXAttribute(entity.Description, STR_Description));
+            xElement.Add(StringTransformer.Instance.ToXAttribute(entity.Language, STR_Language));
         }
 
-        public override void XElementToEntity(XElement xElement, WorldInfoEntity entity)
+        public override void ToEntity(XElement xElement, WorldInfoEntity entity)
         {
-            throw new NotImplementedException();
+            entity.Name = StringTransformer.Instance.ToEntity(xElement.Attribute(STR_Name));
+            entity.Description = StringTransformer.Instance.ToEntity(xElement.Attribute(STR_Description));
+            entity.Language = StringTransformer.Instance.ToEntity(xElement.Attribute(STR_Language));
         }
     }
 }
