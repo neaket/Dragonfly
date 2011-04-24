@@ -100,12 +100,11 @@
     <Compile Include="Tests\Models\WorldTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dragonfly.Game\Dragonfly.Game\Dragonfly Windows.csproj">
+    <ProjectReference Include="..\Dragonfly.Game\Dragonfly.csproj">
       <Project>{044A71EC-84D8-4D85-8AC2-4A6688D07459}</Project>
-      <Name>Dragonfly Windows</Name>
+      <Name>Dragonfly</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--

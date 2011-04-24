@@ -5,13 +5,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dragonfly.Tests", "Dragonfly.Tests\Dragonfly.Tests.csproj", "{2EFFFC06-6FCF-4ACE-9E88-E68E938E87C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dragonfly WP7", "Dragonfly.Game\Dragonfly.Game\Dragonfly WP7.csproj", "{3C57C0F3-241A-43DF-95DE-36FF044B2D09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dragonfly WP7", "Dragonfly.Game\Dragonfly WP7.csproj", "{3C57C0F3-241A-43DF-95DE-36FF044B2D09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dragonfly.GameContent", "Dragonfly.Game\Dragonfly.GameContent\Dragonfly.GameContent.contentproj", "{F49E0B41-D14E-4918-93BC-36894A51A7CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dragonfly.GameContent", "Dragonfly.GameContent\Dragonfly.GameContent.contentproj", "{F49E0B41-D14E-4918-93BC-36894A51A7CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farseer Physics XNA WP7", "Farseer Physics Engine 3.3 XNA\Farseer Physics XNA WP7.csproj", "{AA6CB78E-9484-4843-8613-54CD2BF1E948}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dragonfly Windows", "Dragonfly.Game\Dragonfly.Game\Dragonfly Windows.csproj", "{044A71EC-84D8-4D85-8AC2-4A6688D07459}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dragonfly", "Dragonfly.Game\Dragonfly.csproj", "{044A71EC-84D8-4D85-8AC2-4A6688D07459}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farseer Physics XNA", "Farseer Physics Engine 3.3 XNA\Farseer Physics XNA.csproj", "{0A850700-1ABB-4288-A391-6726B90EBEB9}"
 EndProject

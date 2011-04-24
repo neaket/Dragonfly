@@ -3,5 +3,5 @@ Content\menufont.xnb
 Content\background.xnb
 Content\blank.xnb
 Content\gradient.xnb
-TestLevels\TestLevel1.xml
-TestLevels\WorldSchema1.xsd
+DragonflyGame\TestLevels\WorldSchema1.xsd
+WorldSchema1.xsd
