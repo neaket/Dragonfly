@@ -76,8 +76,15 @@ namespace Dragonfly.Models.Transformers.WorldElements
         public void ToEntity(XElement xElement, WorldElementEntity entity)
         {
             entity.Positon = Vector2Transformer.Instance.ToEntity(xElement.Element(STR_Position));
-            entity.Color = ColorTransformer.Instance.ToEntity(xElement.Attribute(STR_Color));
-            entity.Material = MaterialTransformer.Instance.ToEntity(xElement.Attribute(STR_Material));
+
+            if (entity.Color == null)
+            {
+                entity.Color = ColorTransformer.Instance.ToEntity(xElement.Attribute(STR_Color));
+            }
+            if (entity.Material == null)
+            {
+                entity.Material = MaterialTransformer.Instance.ToEntity(xElement.Attribute(STR_Material));
+            }
         }
 
         public void SetupTransformer() { }
@@ -86,9 +93,13 @@ namespace Dragonfly.Models.Transformers.WorldElements
         {
             xElement.Add(Vector2Transformer.Instance.ToXElement(entity.Positon, STR_Position));
             xElement.Add(ColorTransformer.Instance.ToXAttribute(entity.Color, STR_Color));
-            xElement.Add(MaterialTransformer.Instance.ToXAttribute(entity.Material, STR_Material));
 
-            throw new NotImplementedException();
+
+            if (entity.Material != null)
+            {
+                xElement.Add(MaterialTransformer.Instance.ToXAttribute(entity.Material, STR_Material));
+            }
+
         }
     }
 }

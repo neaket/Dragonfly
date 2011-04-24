@@ -3,4 +3,5 @@ Content\menufont.xnb
 Content\background.xnb
 Content\blank.xnb
 Content\gradient.xnb
-WorldSchema1.xsd
+TestLevels\TestLevel1.xml
+TestLevels\WorldSchema1.xsd

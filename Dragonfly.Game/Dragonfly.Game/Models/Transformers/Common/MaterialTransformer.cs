@@ -37,6 +37,11 @@ namespace Dragonfly.Models.Transformers.Common
 
         public Texture2D ToEntity(XAttribute attribute)
         {
+            if (attribute == null)
+            {
+                return null;
+            }
+
             throw new NotImplementedException();
         }
 
