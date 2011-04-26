@@ -57,7 +57,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
                 }
             }
 
-            throw new TransformerException(String.Format("World element XElement name '{0}' is unknown."));
+            throw new TransformerException(String.Format("World element XElement name '{0}' is unknown.", xElement.Name.LocalName));
         }
 
         public XElement ToXElement(WorldElementEntity entity)
@@ -70,20 +70,20 @@ namespace Dragonfly.Models.Transformers.WorldElements
                 }
             }
 
-            throw new TransformerException(String.Format("World element entity type '{0}' is unknown."));
+            throw new TransformerException(String.Format("World element entity type '{0}' is unknown.", entity.GetType()));
         }
 
         public void ToEntity(XElement xElement, WorldElementEntity entity)
         {
-            entity.Positon = Vector2Transformer.Instance.ToEntity(xElement.Element(STR_Position));
+            entity.Positon = Vector2Transformer.Instance.ToEntity(xElement.Element(TransformerSettings.WorldNamespace + STR_Position));
 
             if (entity.Color == null)
             {
-                entity.Color = ColorTransformer.Instance.ToEntity(xElement.Attribute(STR_Color));
+                entity.Color = ColorTransformer.Instance.ToEntity(xElement.Attribute(TransformerSettings.WorldNamespace + STR_Color));
             }
             if (entity.Material == null)
             {
-                entity.Material = MaterialTransformer.Instance.ToEntity(xElement.Attribute(STR_Material));
+                entity.Material = MaterialTransformer.Instance.ToEntity(xElement.Attribute(TransformerSettings.WorldNamespace + STR_Material));
             }
         }
 
@@ -91,13 +91,13 @@ namespace Dragonfly.Models.Transformers.WorldElements
 
         public void ToXElement(WorldElementEntity entity, XElement xElement)
         {
-            xElement.Add(Vector2Transformer.Instance.ToXElement(entity.Positon, STR_Position));
-            xElement.Add(ColorTransformer.Instance.ToXAttribute(entity.Color, STR_Color));
+            xElement.Add(Vector2Transformer.Instance.ToXElement(entity.Positon, TransformerSettings.WorldNamespace + STR_Position));
+            xElement.Add(ColorTransformer.Instance.ToXAttribute(entity.Color, TransformerSettings.WorldNamespace + STR_Color));
 
 
             if (entity.Material != null)
             {
-                xElement.Add(MaterialTransformer.Instance.ToXAttribute(entity.Material, STR_Material));
+                xElement.Add(MaterialTransformer.Instance.ToXAttribute(entity.Material, TransformerSettings.WorldNamespace + STR_Material));
             }
 
         }

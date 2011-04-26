@@ -67,11 +67,11 @@
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Game\Levels\" />
     <Folder Include="Module\Common\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DragonflyGame\Levels\TestLevel1.cs" />
+    <Compile Include="Models\Transformers\Common\TransformerSettings.cs" />
+    <Compile Include="Module\Levels\TestLevel1.cs" />
     <Compile Include="Engine\Renderer\WorldElements\CircleElementRenderer.cs" />
     <Compile Include="Engine\Renderer\WorldRenderer.cs" />
     <Compile Include="Engine\ScreenManager\GameScreen.cs">
@@ -96,7 +96,6 @@
     <Compile Include="Models\Transformers\WorldElements\IWorldElementTransformer.cs" />
     <Compile Include="Module\Content\MenuResources.cs" />
     <Compile Include="Module\Levels\Level1.cs" />
-    <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\Common\CommonConstants.cs" />
     <Compile Include="Models\Entities\Physics\PhysicsSettingsEntity.cs" />
     <Compile Include="Models\Entities\WorldElements\RectangleElementEntity.cs" />
@@ -136,9 +135,11 @@
     <Compile Include="Game1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DragonflyGame\TestLevels\TestLevel1.xml" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
+    <EmbeddedResource Include="TestLevel1.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="World1.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -218,10 +219,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DragonflyGame\TestLevels\WorldSchema1.xsd">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="WorldSchema1.xsd">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

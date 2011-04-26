@@ -10,6 +10,6 @@ namespace Dragonfly.Models.Transformers.Common
     {
         void ToEntity(XAttribute attribute, E entity);
         E ToEntity(XAttribute attribute);
-        XAttribute ToXAttribute(E entity, string name);
+        XAttribute ToXAttribute(E entity, XName name);
     }
 }

@@ -35,16 +35,16 @@ namespace Dragonfly.Models.Transformers.World
 
         public override void ToXElement(WorldInfoEntity entity, XElement xElement)
         {
-            xElement.Add(StringTransformer.Instance.ToXAttribute(entity.Name, STR_Name));
-            xElement.Add(StringTransformer.Instance.ToXAttribute(entity.Description, STR_Description));
-            xElement.Add(StringTransformer.Instance.ToXAttribute(entity.Language, STR_Language));
+            xElement.Add(StringTransformer.Instance.ToXAttribute(entity.Name, TransformerSettings.WorldNamespace + STR_Name));
+            xElement.Add(StringTransformer.Instance.ToXAttribute(entity.Description, TransformerSettings.WorldNamespace + STR_Description));
+            xElement.Add(StringTransformer.Instance.ToXAttribute(entity.Language, TransformerSettings.WorldNamespace + STR_Language));
         }
 
         public override void ToEntity(XElement xElement, WorldInfoEntity entity)
         {
-            entity.Name = StringTransformer.Instance.ToEntity(xElement.Attribute(STR_Name));
-            entity.Description = StringTransformer.Instance.ToEntity(xElement.Attribute(STR_Description));
-            entity.Language = StringTransformer.Instance.ToEntity(xElement.Attribute(STR_Language));
+            entity.Name = StringTransformer.Instance.ToEntity(xElement.Attribute(TransformerSettings.WorldNamespace + STR_Name));
+            entity.Description = StringTransformer.Instance.ToEntity(xElement.Attribute(TransformerSettings.WorldNamespace + STR_Description));
+            entity.Language = StringTransformer.Instance.ToEntity(xElement.Attribute(TransformerSettings.WorldNamespace + STR_Language));
         }
     }
 }

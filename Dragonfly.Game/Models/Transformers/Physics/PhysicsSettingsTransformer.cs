@@ -29,17 +29,17 @@ namespace Dragonfly.Models.Transformers.Physics
 
         public XElement ToXElement(PhysicsSettingsEntity entity)
         {
-            return ToXElement(entity, STR_PhysicsSettings);
+            return ToXElement(entity, TransformerSettings.WorldNamespace + STR_PhysicsSettings);
         }
 
         public override void ToXElement(PhysicsSettingsEntity entity, XElement xElement)
         {
-            xElement.Add(Vector2Transformer.Instance.ToXElement(entity.Gravity, STR_Gravity));
+            xElement.Add(Vector2Transformer.Instance.ToXElement(entity.Gravity, TransformerSettings.WorldNamespace + STR_Gravity));
         }
 
         public override void ToEntity(XElement xElement, PhysicsSettingsEntity entity)
         {
-            entity.Gravity = Vector2Transformer.Instance.ToEntity(xElement.Element(STR_Gravity));
+            entity.Gravity = Vector2Transformer.Instance.ToEntity(xElement.Element(TransformerSettings.WorldNamespace + STR_Gravity));
         }
     }
 }

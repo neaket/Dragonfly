@@ -42,10 +42,10 @@ namespace Dragonfly.Models.Transformers.World
 
         public override void ToXElement(WorldEntity entity, XElement xElement)
         {
-            xElement.Add(WorldInfoTransformer.Instance.ToXElement(entity.WorldInfo, WorldInfoTransformer.STR_WorldInfo));
+            xElement.Add(WorldInfoTransformer.Instance.ToXElement(entity.WorldInfo, TransformerSettings.WorldNamespace + WorldInfoTransformer.STR_WorldInfo));
             xElement.Add(PhysicsSettingsTransformer.Instance.ToXElement(entity.PhysicsSettings));
 
-            XElement worldElements = new XElement(STR_WorldElements);
+            XElement worldElements = new XElement(TransformerSettings.WorldNamespace + STR_WorldElements);
             foreach (var element in entity.WorldElements)
             {
                 worldElements.Add(WorldElementTransformer.Instance.ToXElement(element));
@@ -55,10 +55,10 @@ namespace Dragonfly.Models.Transformers.World
 
         public override void ToEntity(XElement xElement, WorldEntity entity)
         {
-            entity.WorldInfo = WorldInfoTransformer.Instance.ToEntity(xElement.Element(WorldInfoTransformer.STR_WorldInfo));
-            entity.PhysicsSettings = PhysicsSettingsTransformer.Instance.ToEntity(xElement.Element(PhysicsSettingsTransformer.STR_PhysicsSettings));
+            entity.WorldInfo = WorldInfoTransformer.Instance.ToEntity(xElement.Element(TransformerSettings.WorldNamespace + WorldInfoTransformer.STR_WorldInfo));
+            entity.PhysicsSettings = PhysicsSettingsTransformer.Instance.ToEntity(xElement.Element(TransformerSettings.WorldNamespace + PhysicsSettingsTransformer.STR_PhysicsSettings));
 
-            foreach (var worldElement in xElement.Element(STR_WorldElements).Elements())
+            foreach (var worldElement in xElement.Element(TransformerSettings.WorldNamespace + STR_WorldElements).Elements())
             {
                 entity.WorldElements.Add(WorldElementTransformer.Instance.ToEntity(worldElement));
             }           

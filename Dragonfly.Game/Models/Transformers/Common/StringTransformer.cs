@@ -44,7 +44,7 @@ namespace Dragonfly.Models.Transformers.Common
             return attribute.Value;
         }
 
-        public XAttribute ToXAttribute(string entity, string name)
+        public XAttribute ToXAttribute(string entity, XName name)
         {
             return new XAttribute(name, entity);
         }

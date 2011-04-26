@@ -45,7 +45,7 @@ namespace Dragonfly.Models.Transformers.Common
             throw new NotImplementedException();
         }
 
-        public XAttribute ToXAttribute(Texture2D entity, string name)
+        public XAttribute ToXAttribute(Texture2D entity, XName name)
         {
             throw new NotImplementedException();
         }

@@ -28,7 +28,10 @@ namespace Dragonfly.Module
 
             graphics.PreferredBackBufferWidth = 800;
             graphics.PreferredBackBufferHeight = 480;
+            
+#if WINDOWS_PHONE            
             graphics.IsFullScreen = true;
+#endif
             screenController = new ScreenController(this);
 
             Components.Add(screenController);
@@ -39,7 +42,9 @@ namespace Dragonfly.Module
 
         protected override void OnExiting(object sender, EventArgs args)
         {
+#if WINDOWS_PHONE
             screenController.SerializeState();
+#endif
 
             base.OnExiting(sender, args);
         }

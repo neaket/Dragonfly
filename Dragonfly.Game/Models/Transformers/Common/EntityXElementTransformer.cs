@@ -10,7 +10,7 @@ namespace Dragonfly.Models.Transformers.Common
     {
         public abstract void ToXElement(T entity, XElement xElement);
 
-        public XElement ToXElement(T entity, string elementName)
+        public XElement ToXElement(T entity, XName elementName)
         {
             XElement xElement = new XElement(elementName);
 

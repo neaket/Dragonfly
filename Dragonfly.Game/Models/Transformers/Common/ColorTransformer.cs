@@ -79,7 +79,7 @@ namespace Dragonfly.Models.Transformers.Common
             return entity;
         }
 
-        public XAttribute ToXAttribute(Color entity, string name)
+        public XAttribute ToXAttribute(Color entity, XName name)
         {            
             string color = "#";
             byte[] data;

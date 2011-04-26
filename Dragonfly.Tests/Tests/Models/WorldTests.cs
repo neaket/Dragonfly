@@ -11,6 +11,7 @@ using Dragonfly.Models.Transformers.World;
 using Microsoft.Xna.Framework;
 using NUnit.Framework;
 using Dragonfly.Models.Entities.WorldElements;
+using Dragonfly.Models.Transformers.Common;
 
 namespace Dragonfly.Tests.Models
 {
@@ -22,7 +23,7 @@ namespace Dragonfly.Tests.Models
         {
             WorldEntity world = createTestWorld();
 
-            XElement xElement = WorldTransformer.Instance.ToXElement(world, "World");
+            XElement xElement = WorldTransformer.Instance.ToXElement(world, TransformerSettings.WorldNamespace + "World");
             
          
 
@@ -53,9 +54,21 @@ namespace Dragonfly.Tests.Models
             XElement xElement = WorldTransformer.Instance.ToXElement(world, "World");
 
             WorldEntity world2 = WorldTransformer.Instance.ToEntity(xElement);
-           
- 
-           
+        
+        }
+
+        [Test]
+        public void LoadTestLevel()
+        {
+            //var level = XDocument.Load("TestResources\\TestLevel1.xml");
+            //foreach (var e in level.Elements())
+            //{
+            //    System.Console.WriteLine(e.Name);
+            //}
+
+            //XNamespace nsc = "http://eaket.com/games/dragonfly/WorldSchema1";
+            //var test = nsc + WorldInfoTransformer.STR_Name;
+            //Assert.IsNotNull(level.Element(nsc + WorldInfoTransformer.STR_WorldInfo));
         }
 
         private WorldEntity createTestWorld()

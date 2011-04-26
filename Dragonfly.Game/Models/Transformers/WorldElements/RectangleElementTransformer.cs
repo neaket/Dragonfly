@@ -11,7 +11,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
 {
     public class RectangleElementTransformer : EntityXElementTransformer<RectangleElementEntity>, IWorldElementTransformer
     {
-        public const string STR_RectangleElement = "BoxElement";
+        public const string STR_RectangleElement = "RectangleElement";
         public const string STR_Size = "Size";
 
         #region Instance
@@ -41,7 +41,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
         {
             WorldElementTransformer.Instance.ToXElement(entity, xElement);
 
-            xElement.Add(Vector2Transformer.Instance.ToXElement(entity.Size, STR_Size));
+            xElement.Add(Vector2Transformer.Instance.ToXElement(entity.Size, TransformerSettings.WorldNamespace + STR_Size));
 
         }
 
@@ -49,7 +49,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
         {
             WorldElementTransformer.Instance.ToEntity(xElement, entity);
 
-            entity.Size = Vector2Transformer.Instance.ToEntity(xElement.Element(STR_Size));
+            entity.Size = Vector2Transformer.Instance.ToEntity(xElement.Element(TransformerSettings.WorldNamespace + STR_Size));
         }
 
         public string EntityName
@@ -76,10 +76,10 @@ namespace Dragonfly.Models.Transformers.WorldElements
             RectangleElementEntity rectangle = entity as RectangleElementEntity;
             if (rectangle == null)
             {
-                throw new TransformerException("Entity was not of type RectangleElementEntity");
+                throw new TransformerException("Entity was not of type " + typeof(RectangleElementEntity).FullName);
             }
 
-            XElement xElement = new XElement(EntityName);
+            XElement xElement = new XElement(TransformerSettings.WorldNamespace + EntityName);
             ToXElement(rectangle, xElement);
             return xElement;
         }

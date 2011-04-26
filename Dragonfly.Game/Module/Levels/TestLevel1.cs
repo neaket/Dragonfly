@@ -9,23 +9,39 @@ using FarseerPhysics.Dynamics;
 using Dragonfly.Models.Entities.WorldElements;
 using FarseerPhysics.Factories;
 using Microsoft.Xna.Framework;
+using Dragonfly.Engine.Renderer;
+using System.Diagnostics;
+using Dragonfly.Engine.ScreenManager;
 
-namespace Dragonfly.DragonflyGame.Levels
+namespace Dragonfly.Module.Levels
 {
-    class TestLevel1
+    class TestLevel1 : GameScreen
     {
         public World World;
-        WorldEntity WorldEntity;
+        protected WorldEntity _WorldEntity;
         public float TimeLeftOver;
+
+        protected WorldRenderer _WorldRenderer;
 
         public TestLevel1()
         {
-            XElement xElement = XElement.Load("TestLevel1.xml");
-            WorldEntity WorldEntity = WorldTransformer.Instance.ToEntity(xElement);
+            XElement xElement = XElement.Load(@"Content\Levels\TestLevel1.xml");
+            var test =             xElement.Elements();
+            foreach (var t in test)
+            {
+                System.Console.WriteLine(t.Name);
+            }
 
-            World = new World(WorldEntity.PhysicsSettings.Gravity);
+            _WorldEntity = WorldTransformer.Instance.ToEntity(xElement);
 
-            foreach (var entity in WorldEntity.WorldElements)
+            Debug.Assert(_WorldEntity != null);
+
+            _WorldRenderer = new WorldRenderer(_WorldEntity);
+
+            World = new World(_WorldEntity.PhysicsSettings.Gravity);
+
+
+            foreach (var entity in _WorldEntity.WorldElements)
             {
                 Body body;
                 switch (entity.ElementType)
@@ -51,17 +67,23 @@ namespace Dragonfly.DragonflyGame.Levels
                 body.Position = entity.Positon;
                 entity.Body = body;
             }
+
+
         }
 
-        public void Draw(GameTime gameTime)
+        public override void Draw(GameTime gameTime)
         {
+            _WorldRenderer.Draw(gameTime);
             
         }
 
 
-        public void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
-            World.Step((float)gameTime.ElapsedGameTime.TotalSeconds);
+            if (IsActive)
+            {
+                World.Step((float)gameTime.ElapsedGameTime.TotalSeconds);
+            }
         }
     }
 }

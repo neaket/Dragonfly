@@ -19,7 +19,7 @@ namespace Dragonfly.Models.Transformers.Common
             return entity;
         }
 
-        public abstract XAttribute ToXAttribute(E entity, string name);
+        public abstract XAttribute ToXAttribute(E entity, XName name);
 
     }
 }

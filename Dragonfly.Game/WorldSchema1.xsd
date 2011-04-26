@@ -54,7 +54,7 @@
   <!-- Valid World Elements-->
   <xs:complexType name="WorldElements">
     <xs:choice maxOccurs="unbounded">
-      <xs:element name="BoxElement" type="BoxElement" />
+      <xs:element name="RectangleElement" type="RectangleElement" />
       <xs:element name="CircleElement" type="CircleElement" />
       <xs:element name="ElypsisElement" type="ElypsisElement" />
       <xs:element name="PolygonElement" type="PolygonElement" />
@@ -72,7 +72,7 @@
       <xs:attribute name="Color" type="xs:string" use="optional" />
     </xs:complexType>
 
-  <xs:complexType name="BoxElement">
+  <xs:complexType name="RectangleElement">
     <xs:complexContent>
       <xs:extension base="WorldElement">
         <xs:sequence>

@@ -88,7 +88,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DragonflyGame\Levels\TestLevel1.cs" />
     <Compile Include="Engine\Renderer\WorldElements\CircleElementRenderer.cs" />
     <Compile Include="Engine\Renderer\WorldRenderer.cs" />
     <Compile Include="Engine\ScreenManager\GameScreen.cs">
@@ -109,11 +108,11 @@
     <Compile Include="Models\Transformers\Common\IEntityXElementTransformer.cs" />
     <Compile Include="Models\Transformers\Common\MaterialTransformer.cs" />
     <Compile Include="Models\Transformers\Common\StringTransformer.cs" />
+    <Compile Include="Models\Transformers\Common\TransformerSettings.cs" />
     <Compile Include="Models\Transformers\Exceptions\TransformerException.cs" />
     <Compile Include="Models\Transformers\WorldElements\IWorldElementTransformer.cs" />
     <Compile Include="Module\Content\MenuResources.cs" />
     <Compile Include="Module\Levels\Level1.cs" />
-    <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\Common\CommonConstants.cs" />
     <Compile Include="Models\Entities\Physics\PhysicsSettingsEntity.cs" />
     <Compile Include="Models\Entities\WorldElements\RectangleElementEntity.cs" />
@@ -138,6 +137,7 @@
     <Compile Include="Models\Transformers\WorldElements\WorldElementTransformer.cs" />
     <Compile Include="Models\Transformers\World\WorldInfoTransformer.cs" />
     <Compile Include="Models\Transformers\World\WorldTransformer.cs" />
+    <Compile Include="Module\Levels\TestLevel1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Module\Content\CommonResources.cs" />
     <Compile Include="Module\Screens\BackgroundScreen.cs" />
@@ -157,10 +157,6 @@
     </None>
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
-    <None Include="DragonflyGame\TestLevels\WorldSchema1.xsd">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="WorldSchema1.xsd">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -172,9 +168,9 @@
     <Content Include="Background.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
-    <Content Include="DragonflyGame\TestLevels\TestLevel1.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="TestLevel1.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="World1.xml" />
   </ItemGroup>
   <ItemGroup>
