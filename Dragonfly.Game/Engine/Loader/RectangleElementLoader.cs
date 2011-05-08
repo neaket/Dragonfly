@@ -12,7 +12,7 @@ namespace Dragonfly.Engine.Loader
         public static void GenerateTexture(GraphicsDevice graphicsDevice, RectangleElementEntity entity)
         {
             Texture2D texture = new Texture2D(graphicsDevice, entity.Size.X, entity.Size.Y, false, SurfaceFormat.Color);
-
+            
 
 
 
