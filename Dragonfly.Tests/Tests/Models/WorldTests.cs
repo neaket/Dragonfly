@@ -27,15 +27,19 @@ namespace Dragonfly.Tests.Models
             
          
 
-            xElement.Save("unittestsave.xml");
+            xElement.Save("unittestsave.xml", SaveOptions.OmitDuplicateNamespaces);
 
             XmlSchemaSet schemaSet = new XmlSchemaSet();
 
             schemaSet.Add(null, "WorldSchema1.xsd");
 
             XDocument xDocument = new XDocument(xElement);
+            xDocument.AddAnnotation(SaveOptions.OmitDuplicateNamespaces);
+            xDocument.Save("unittest2.xml", SaveOptions.OmitDuplicateNamespaces);
 
-
+            XElement x1 = new XElement(TransformerSettings.WorldNamespace + "Outer");
+            x1.Add(new XElement(TransformerSettings.WorldNamespace + "Inner"));
+            x1.Save("unittest3.xml", SaveOptions.OmitDuplicateNamespaces);
             string val = "";
             xDocument.Validate(schemaSet, (o, vea) => {
                 val += o.GetType().Name + "\n";

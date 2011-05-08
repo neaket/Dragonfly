@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Dragonfly.Models.Entities.WorldElements;
 using Dragonfly.Models.Transformers.Common;
+using System.Xml.Linq;
 
 namespace Dragonfly.Models.Transformers.WorldElements
 {
@@ -29,7 +30,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
         private ElipsisElementTransformer() { }
         #endregion
 
-        public override void ToXElement(ElipsisElementEntity entity, System.Xml.Linq.XElement xElement)
+        public override void ToXElement(ElipsisElementEntity entity, XElement xElement)
         {
             WorldElementTransformer.Instance.ToXElement(entity, xElement);
             throw new NotImplementedException();

@@ -70,10 +70,15 @@
     <Folder Include="Module\Common\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\Generators\TextureGenerator.cs" />
+    <Compile Include="Engine\Loader\PolygonElementLoader.cs" />
+    <Compile Include="Engine\Loader\RectangleElementLoader.cs" />
+    <Compile Include="Engine\Renderers\WorldElements\RectangleElementRenderer.cs" />
     <Compile Include="Models\Transformers\Common\TransformerSettings.cs" />
+    <Compile Include="Module\Content\MaterialContent.cs" />
     <Compile Include="Module\Levels\TestLevel1.cs" />
-    <Compile Include="Engine\Renderer\WorldElements\CircleElementRenderer.cs" />
-    <Compile Include="Engine\Renderer\WorldRenderer.cs" />
+    <Compile Include="Engine\Renderers\WorldElements\CircleElementRenderer.cs" />
+    <Compile Include="Engine\Renderers\WorldRenderer.cs" />
     <Compile Include="Engine\ScreenManager\GameScreen.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -200,9 +205,6 @@
     </Reference>
     <Reference Include="mscorlib">
       <Private>False</Private>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>False</Private>

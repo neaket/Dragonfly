@@ -9,11 +9,11 @@
     <Gravity X="0" Y="9.81"/>
   </PhysicsSettings>
   <WorldElements>
-    <BoxElement Colour="Red">
+    <RectangleElement Color="Red">
       <Position X="500" Y="500"/>
       <Body BodyType="Dynamic" Mass="1" />
       <Size X="10" Y="10"/>  
-    </BoxElement>
+    </RectangleElement>
     <PolygonElement>
       <Position X="500" Y="500"/>
       <Body BodyType="Static" Mass="1"/>

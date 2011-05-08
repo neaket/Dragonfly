@@ -29,7 +29,7 @@ namespace Dragonfly.Models.Transformers.Common
 
         #endregion
 
-        public XElement ToXElement(string entity, string name)
+        public XElement ToXElement(string entity, XName name)
         {
             return new XElement(name, entity);                        
         }

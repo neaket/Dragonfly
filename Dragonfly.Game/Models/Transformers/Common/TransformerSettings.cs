@@ -8,6 +8,6 @@ namespace Dragonfly.Models.Transformers.Common
 {
     public static class TransformerSettings
     {
-        public static XNamespace WorldNamespace = "http://eaket.com/games/dragonfly/WorldSchema1";
+        public static XNamespace WorldNamespace = XNamespace.Get("http://eaket.com/games/dragonfly/WorldSchema1");
     }
 }

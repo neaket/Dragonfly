@@ -35,7 +35,7 @@ namespace Dragonfly.Models.Transformers.World
 
         #endregion
 
-        public XElement EntityToXElement(WorldEntity entity) 
+        public XElement ToXElement(WorldEntity entity) 
         {
             return ToXElement(entity, STR_World);
         }

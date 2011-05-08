@@ -68,9 +68,6 @@
     <Reference Include="mscorlib">
       <Private>False</Private>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System">
       <Private>False</Private>
     </Reference>
@@ -88,8 +85,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Engine\Renderer\WorldElements\CircleElementRenderer.cs" />
-    <Compile Include="Engine\Renderer\WorldRenderer.cs" />
+    <Compile Include="Engine\Generators\TextureGenerator.cs" />
+    <Compile Include="Engine\Loader\PolygonElementLoader.cs" />
+    <Compile Include="Engine\Loader\RectangleElementLoader.cs" />
+    <Compile Include="Engine\Renderers\WorldElements\CircleElementRenderer.cs" />
+    <Compile Include="Engine\Renderers\WorldElements\RectangleElementRenderer.cs" />
+    <Compile Include="Engine\Renderers\WorldRenderer.cs" />
     <Compile Include="Engine\ScreenManager\GameScreen.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -111,6 +112,7 @@
     <Compile Include="Models\Transformers\Common\TransformerSettings.cs" />
     <Compile Include="Models\Transformers\Exceptions\TransformerException.cs" />
     <Compile Include="Models\Transformers\WorldElements\IWorldElementTransformer.cs" />
+    <Compile Include="Module\Content\MaterialContent.cs" />
     <Compile Include="Module\Content\MenuResources.cs" />
     <Compile Include="Module\Levels\Level1.cs" />
     <Compile Include="Models\Common\CommonConstants.cs" />
@@ -185,6 +187,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Engine\Renderer\WorldElements\" />
     <Folder Include="Module\Common\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

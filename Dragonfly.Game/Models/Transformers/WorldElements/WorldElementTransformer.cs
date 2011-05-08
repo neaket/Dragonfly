@@ -12,6 +12,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
 {
     public class WorldElementTransformer : IEntityXElementTransformer<WorldElementEntity>
     {
+        public const string STR_Body = "BodyType";
         public const string STR_Color = "Color";
         public const string STR_Material = "Material";
         public const string STR_Position = "Position";
@@ -79,11 +80,11 @@ namespace Dragonfly.Models.Transformers.WorldElements
 
             if (entity.Color == null)
             {
-                entity.Color = ColorTransformer.Instance.ToEntity(xElement.Attribute(TransformerSettings.WorldNamespace + STR_Color));
+                entity.Color = ColorTransformer.Instance.ToEntity(xElement.Attribute(STR_Color));
             }
             if (entity.Material == null)
             {
-                entity.Material = MaterialTransformer.Instance.ToEntity(xElement.Attribute(TransformerSettings.WorldNamespace + STR_Material));
+                entity.Material = MaterialTransformer.Instance.ToEntity(xElement.Attribute(STR_Material));
             }
         }
 
@@ -92,14 +93,16 @@ namespace Dragonfly.Models.Transformers.WorldElements
         public void ToXElement(WorldElementEntity entity, XElement xElement)
         {
             xElement.Add(Vector2Transformer.Instance.ToXElement(entity.Positon, TransformerSettings.WorldNamespace + STR_Position));
-            xElement.Add(ColorTransformer.Instance.ToXAttribute(entity.Color, TransformerSettings.WorldNamespace + STR_Color));
+            xElement.Add(ColorTransformer.Instance.ToXAttribute(entity.Color, STR_Color));
 
 
             if (entity.Material != null)
             {
-                xElement.Add(MaterialTransformer.Instance.ToXAttribute(entity.Material, TransformerSettings.WorldNamespace + STR_Material));
+                xElement.Add(MaterialTransformer.Instance.ToXAttribute(entity.Material, STR_Material));
             }
 
         }
     }
+
+
 }

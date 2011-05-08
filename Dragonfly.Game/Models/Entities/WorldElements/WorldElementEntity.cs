@@ -10,6 +10,7 @@ namespace Dragonfly.Models.Entities.WorldElements
 {
     public class WorldElementEntity
     {
+        public Texture2D Texture2D { get; set; }
         public ElementType ElementType { get; set; }
         public float Density { get; set; }
 
@@ -36,6 +37,7 @@ namespace Dragonfly.Models.Entities.WorldElements
         public Color Color { get; set; }
         public Texture2D Material { get; set; }
         public Body Body { get; set; }
+        public BodyType BodyType { get; set; }
 
 
     }
@@ -47,4 +49,5 @@ namespace Dragonfly.Models.Entities.WorldElements
         Polygon,
         Rectangle
     }
+
 }

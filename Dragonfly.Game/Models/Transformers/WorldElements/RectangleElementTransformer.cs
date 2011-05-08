@@ -6,6 +6,7 @@ using Dragonfly.Models.Entities.WorldElements;
 using Dragonfly.Models.Transformers.Common;
 using System.Xml.Linq;
 using Dragonfly.Models.Transformers.Exceptions;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Dragonfly.Models.Transformers.WorldElements
 {
@@ -42,12 +43,13 @@ namespace Dragonfly.Models.Transformers.WorldElements
             WorldElementTransformer.Instance.ToXElement(entity, xElement);
 
             xElement.Add(Vector2Transformer.Instance.ToXElement(entity.Size, TransformerSettings.WorldNamespace + STR_Size));
-
         }
 
         public override void ToEntity(XElement xElement, RectangleElementEntity entity)
         {
             WorldElementTransformer.Instance.ToEntity(xElement, entity);
+
+            entity.ElementType = ElementType.Rectangle;
 
             entity.Size = Vector2Transformer.Instance.ToEntity(xElement.Element(TransformerSettings.WorldNamespace + STR_Size));
         }
@@ -83,5 +85,6 @@ namespace Dragonfly.Models.Transformers.WorldElements
             ToXElement(rectangle, xElement);
             return xElement;
         }
+
     }
 }

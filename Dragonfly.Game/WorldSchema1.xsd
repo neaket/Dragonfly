@@ -66,7 +66,7 @@
     <xs:complexType name="WorldElement">
       <xs:sequence>
         <xs:element name="Position" type="Vector2" />
-        <xs:element name="Body" type="Body" />
+        <xs:element name="BodyInfo" type="BodyInfo" minOccurs="0" />
       </xs:sequence>
       <xs:attribute name="Material" type="xs:string" use="optional" />
       <xs:attribute name="Color" type="xs:string" use="optional" />
@@ -124,7 +124,7 @@
   </xs:complexType>
   
    <!-- Body -->
-  <xs:complexType name="Body">
+  <xs:complexType name="BodyInfo">
 
     <xs:attribute name="BodyType" type="BodyType" />
     <xs:attribute name="Mass" type="PositiveNonZero" />

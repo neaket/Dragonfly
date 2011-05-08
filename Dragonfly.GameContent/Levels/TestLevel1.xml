@@ -11,15 +11,15 @@
     <Gravity X="0" Y="0"/>
   </PhysicsSettings>
   <WorldElements>
-    <BoxElement Color="#ff0000">
+    <RectangleElement Color="#ff0000">
       <Position X="20" Y="20"/>
       <Body BodyType="Dynamic" Mass="1"/>
       <Size X="10" Y="10"/>
-    </BoxElement>
-    <BoxElement Color="#00ff00">
+    </RectangleElement>
+    <RectangleElement Color="#00ff00">
       <Position X="100" Y="200"/>
       <Body BodyType="Static" Mass="1"/>
       <Size X="200" Y="5"/>
-    </BoxElement>
+    </RectangleElement>
   </WorldElements>
 </World>

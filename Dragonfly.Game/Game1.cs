@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Media;
 using Dragonfly.Engine.ScreenManager;
 using Dragonfly.Module.Screens;
+using Dragonfly.Module.Levels;
 
 namespace Dragonfly.Module
 {
@@ -38,6 +39,7 @@ namespace Dragonfly.Module
 
             screenController.AddScreen(new BackgroundScreen(), null);
             screenController.AddScreen(new MainMenuScreen(), null);
+            var b = new TestLevel1();
         }
 
         protected override void OnExiting(object sender, EventArgs args)
