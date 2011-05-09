@@ -14,6 +14,8 @@ namespace Dragonfly.Models.Transformers.WorldElements
     {
         public const string STR_RectangleElement = "RectangleElement";
         public const string STR_Size = "Size";
+        public const string STR_Width = "Width";
+        public const string STR_Height = "Height";
 
         #region Instance
         
@@ -42,7 +44,8 @@ namespace Dragonfly.Models.Transformers.WorldElements
         {
             WorldElementTransformer.Instance.ToXElement(entity, xElement);
 
-            xElement.Add(Vector2Transformer.Instance.ToXElement(entity.Size, TransformerSettings.WorldNamespace + STR_Size));
+            xElement.Add(new XAttribute(STR_Width, entity.Width));
+            xElement.Add(new XAttribute(STR_Height, entity.Height));
         }
 
         public override void ToEntity(XElement xElement, RectangleElementEntity entity)
@@ -51,7 +54,9 @@ namespace Dragonfly.Models.Transformers.WorldElements
 
             entity.ElementType = ElementType.Rectangle;
 
-            entity.Size = Vector2Transformer.Instance.ToEntity(xElement.Element(TransformerSettings.WorldNamespace + STR_Size));
+            entity.Width = (float)xElement.Attribute(STR_Width);
+            entity.Height = (float)xElement.Attribute(STR_Height);
+            
         }
 
         public string EntityName
@@ -59,9 +64,11 @@ namespace Dragonfly.Models.Transformers.WorldElements
             get { return STR_RectangleElement; }
         }
 
+        private static Type _Type = typeof(RectangleElementEntity);
+
         public Type Type
         {
-            get { return typeof(RectangleElementEntity); }
+            get { return _Type; }
         }
 
         public WorldElementEntity ToWorldElementEntity(XElement xElement)

@@ -7,6 +7,7 @@ using FarseerPhysics.Common;
 using Microsoft.Xna.Framework;
 using FarseerPhysics.Common.Decomposition;
 using FarseerPhysics.Collision;
+using Dragonfly.Models.Entities.WorldElements;
 
 namespace Dragonfly.Engine.Generators
 {
@@ -20,9 +21,37 @@ namespace Dragonfly.Engine.Generators
         {
             _graphicsDevice = graphicsDevice;
             _materials = materials;
+            _effect = new BasicEffect(graphicsDevice);
         }
 
-        public Texture2D TextureFromVertices(Vertices vertices, Color fillColor, Color outlineColor, float materialScale)
+        public Texture2D TextureFromWorldElement(WorldElementEntity elementEntity)
+        {
+            Vertices vertices;
+            switch (elementEntity.ElementType)
+            {
+                case ElementType.Circle:
+                    throw new NotImplementedException();
+                case ElementType.Elipsis:
+                    throw new NotImplementedException();
+                case ElementType.Polygon:
+                    PolygonElementEntity polygon = elementEntity as PolygonElementEntity;
+                    throw new NotImplementedException();
+                case ElementType.Rectangle:
+                    RectangleElementEntity rectangle = elementEntity as RectangleElementEntity;
+                    vertices = new Vertices(4);
+                    vertices.Add(Vector2.Zero);
+                    vertices.Add(new Vector2(rectangle.Width, 0));
+                    vertices.Add(new Vector2(rectangle.Width, rectangle.Height));
+                    vertices.Add(new Vector2(0, rectangle.Height));
+                    break;
+                default:
+                    throw new NotSupportedException(String.Format("ElementType '{0}' is not supported", elementEntity.ElementType));                                        
+            }
+
+            return TextureFromVertices(vertices, elementEntity.Material, elementEntity.FillColor, elementEntity.OutlineColor, elementEntity.MaterialScale);            
+        }        
+
+        public Texture2D TextureFromVertices(Vertices vertices, Texture2D material, Color fillColor, Color outlineColor, float materialScale)
         {
             Vertices verts = new Vertices(vertices);
 
@@ -70,7 +99,7 @@ namespace Dragonfly.Engine.Generators
 
             Vector2 vertsSize = new Vector2(vertsBounds.UpperBound.X - vertsBounds.LowerBound.X, vertsBounds.UpperBound.Y - vertsBounds.LowerBound.Y);
 
-            return RenderTexture((int)(vertsSize.X), (int)vertsSize.Y, null, verticesFill, verticesOutline);            
+            return RenderTexture((int)(vertsSize.X), (int)vertsSize.Y, material, verticesFill, verticesOutline);            
         }
 
         public Texture2D RenderTexture(int width, int height, Texture2D material, List<VertexPositionColorTexture[]> verticesFill, VertexPositionColor[] verticesOutline)

@@ -71,10 +71,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engine\Generators\TextureGenerator.cs" />
+    <Compile Include="Engine\Levels\GameLevel.cs" />
     <Compile Include="Engine\Loader\PolygonElementLoader.cs" />
     <Compile Include="Engine\Loader\RectangleElementLoader.cs" />
+    <Compile Include="Engine\Renderers\Camera2D.cs" />
+    <Compile Include="Engine\Renderers\ConvertUnits.cs" />
     <Compile Include="Engine\Renderers\WorldElements\RectangleElementRenderer.cs" />
     <Compile Include="Models\Transformers\Common\TransformerSettings.cs" />
+    <Compile Include="Models\Transformers\WorldElements\BodyTypeTransformer.cs" />
     <Compile Include="Module\Content\MaterialContent.cs" />
     <Compile Include="Module\Levels\TestLevel1.cs" />
     <Compile Include="Engine\Renderers\WorldElements\CircleElementRenderer.cs" />
@@ -86,9 +90,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engine\ScreenManager\ScreenController.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Engine\World\World.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Transformers\Common\ColorTransformer.cs" />

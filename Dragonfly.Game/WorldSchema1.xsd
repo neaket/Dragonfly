@@ -18,6 +18,12 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="Color">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[#]?[A-Fa-f0-9]*" />
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="Vertices">
     <xs:list itemType="Vertex" >
      
@@ -31,9 +37,15 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="PositiveNonZero">
+  <xs:simpleType name="PositiveNonZeroFloat">
     <xs:restriction base="xs:float" >
       <xs:minExclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PositiveAndZeroFloat">
+    <xs:restriction base="xs:float" >
+      <xs:minInclusive value="0" />
     </xs:restriction>
   </xs:simpleType>
   
@@ -69,15 +81,16 @@
         <xs:element name="BodyInfo" type="BodyInfo" minOccurs="0" />
       </xs:sequence>
       <xs:attribute name="Material" type="xs:string" use="optional" />
-      <xs:attribute name="Color" type="xs:string" use="optional" />
+      <xs:attribute name="FillColor" type="Color" use="optional" />
+      <xs:attribute name="OutlineColor" type="Color" use="optional" />
+      <xs:attribute name="BodyType" type="BodyType" use="required" />
     </xs:complexType>
 
   <xs:complexType name="RectangleElement">
     <xs:complexContent>
       <xs:extension base="WorldElement">
-        <xs:sequence>
-          <xs:element name="Size" type="Vector2" />
-        </xs:sequence>
+        <xs:attribute name="Width" type="PositiveNonZeroFloat" />
+        <xs:attribute name="Height" type="PositiveAndZeroFloat" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -127,7 +140,7 @@
   <xs:complexType name="BodyInfo">
 
     <xs:attribute name="BodyType" type="BodyType" />
-    <xs:attribute name="Mass" type="PositiveNonZero" />
+    <xs:attribute name="Mass" type="PositiveNonZeroFloat" />
     
   </xs:complexType>
   

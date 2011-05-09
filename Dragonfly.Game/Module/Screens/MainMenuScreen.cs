@@ -10,6 +10,8 @@
 #region Using Statements
 using Microsoft.Xna.Framework;
 using Dragonfly.Module.Levels;
+using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 #endregion
 
 namespace Dragonfly.Module.Screens
@@ -53,7 +55,7 @@ namespace Dragonfly.Module.Screens
         void PlayGameMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
             LoadingScreen.Load(ScreenManager, true, e.PlayerIndex,
-                               new TestLevel1());
+                               new TestLevel1(new Dictionary<string, Texture2D>()));
         }
 
 

@@ -8,18 +8,16 @@
     Description="This is the first level to be loaded"
     Language="en"/>
   <PhysicsSettings>
-    <Gravity X="0" Y="0"/>
+    <Gravity X="0" Y="9.81"/>
   </PhysicsSettings>
   <WorldElements>
-    <RectangleElement Color="#ff0000">
+    <RectangleElement FillColor="#ff0000" Width="10" Height="10" BodyType="Dynamic">
       <Position X="20" Y="20"/>
       <Body BodyType="Dynamic" Mass="1"/>
-      <Size X="10" Y="10"/>
     </RectangleElement>
-    <RectangleElement Color="#00ff00">
+    <RectangleElement FillColor="#00ff00" Width="200" Height="5" BodyType="Static">
       <Position X="100" Y="200"/>
       <Body BodyType="Static" Mass="1"/>
-      <Size X="200" Y="5"/>
     </RectangleElement>
   </WorldElements>
 </World>

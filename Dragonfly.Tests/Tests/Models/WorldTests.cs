@@ -88,9 +88,11 @@ namespace Dragonfly.Tests.Models
             world.PhysicsSettings.Gravity = Vector2.Zero;
 
             RectangleElementEntity rectangle = new RectangleElementEntity();
-            rectangle.Color = Color.Wheat;
-            rectangle.Positon = new Vector2(5, 5);
-            rectangle.Size = new Vector2(5, 5);
+            rectangle.FillColor = Color.Wheat;
+            rectangle.OutlineColor = Color.Black;
+            rectangle.Position = new Vector2(5, 5);
+            rectangle.Width = 5;
+            rectangle.Height = 5;
 
             world.WorldElements.Add(rectangle);
 

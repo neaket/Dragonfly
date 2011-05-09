@@ -13,10 +13,12 @@ using Dragonfly.Engine.Renderer;
 using System.Diagnostics;
 using Dragonfly.Engine.ScreenManager;
 using Dragonfly.Models.Entities.Physics;
+using Dragonfly.Engine.Levels;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Dragonfly.Module.Levels
 {
-    class TestLevel1 : GameScreen
+    class TestLevel1 : GameLevel
     {
 
         public World World;
@@ -25,67 +27,23 @@ namespace Dragonfly.Module.Levels
 
         protected WorldRenderer _WorldRenderer;
 
-        public TestLevel1()
+        public TestLevel1(Dictionary<string, Texture2D> materials) 
+            : base("Content/Levels/TestLevel1.xml", materials)
         {
-            XElement xElement = XElement.Load(@"Content\Levels\TestLevel1.xml");
-            var test =             xElement.Elements();
-            foreach (var t in test)
-            {
-                System.Console.WriteLine(t.Name);
-            }
-
-            _WorldEntity = WorldTransformer.Instance.ToEntity(xElement);
-
-            Debug.Assert(_WorldEntity != null);
-
-            _WorldRenderer = new WorldRenderer(_WorldEntity);
-
-            World = new World(_WorldEntity.PhysicsSettings.Gravity);
-
-
-            foreach (var entity in _WorldEntity.WorldElements)
-            {
-                Body body;
-                switch (entity.ElementType)
-                {
-                    case ElementType.Circle:
-                        var circleEntity = entity as CircleElementEntity;
-                        body = BodyFactory.CreateCircle(World, circleEntity.Radius, circleEntity.Density);
-                        break;
-                    case ElementType.Elipsis:
-                        var elipsisEntity = entity as ElipsisElementEntity;
-                        body = BodyFactory.CreateEllipse(World, elipsisEntity.Radius.X, elipsisEntity.Radius.Y, 8, elipsisEntity.Density);
-                        break;
-                    case ElementType.Polygon:
-                        var polygonEntity = entity as PolygonElementEntity;
-                        body = BodyFactory.CreatePolygon(World, polygonEntity.Vertices, polygonEntity.Density);
-                        break;
-                    case ElementType.Rectangle:
-                    default:
-                        var rectangleEntity = entity as RectangleElementEntity;
-                        body = BodyFactory.CreateRectangle(World, rectangleEntity.Size.X, rectangleEntity.Size.Y, rectangleEntity.Density);
-                        break;
-                }
-                body.Position = entity.Positon;
-                entity.Body = body;
-            }
-
+            
 
         }
 
         public override void Draw(GameTime gameTime)
         {
-            _WorldRenderer.Draw(gameTime);
+            base.Draw(gameTime);
             
         }
 
 
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
-            if (IsActive)
-            {
-                World.Step((float)gameTime.ElapsedGameTime.TotalSeconds);
-            }
+            base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
         }
     }
 }

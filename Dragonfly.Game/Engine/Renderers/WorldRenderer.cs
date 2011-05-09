@@ -6,6 +6,9 @@ using Microsoft.Xna.Framework;
 using Dragonfly.Models.Entities.WorldElements;
 using Dragonfly.Models.Entities.World;
 using Dragonfly.Engine.Renderer.WorldElements;
+using Microsoft.Xna.Framework.Graphics;
+using Dragonfly.Engine.Renderers;
+using System.Diagnostics;
 
 namespace Dragonfly.Engine.Renderer
 {
@@ -13,36 +16,57 @@ namespace Dragonfly.Engine.Renderer
     {
         protected WorldEntity _WorldEntity;
         protected CircleElementRenderer _CircleElementRenderer;
-        protected Vector2 _CameraOffset = Vector2.Zero;
+        protected Camera2D _camera;
 
-        public WorldRenderer(WorldEntity worldEntity)
+        public WorldRenderer(GraphicsDevice graphicsDevice, WorldEntity worldEntity)
         {
             _WorldEntity = worldEntity;
             _CircleElementRenderer = new CircleElementRenderer();
+            _camera = new Camera2D(graphicsDevice);
 
         }
 
-        public void Draw(GameTime gameTime)
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
+            spriteBatch.Begin(0, null, null, null, null, null, _camera.View);
             foreach (var entity in _WorldEntity.WorldElements)
             {
-
-                switch (entity.ElementType)
+                if (entity.Texture2D != null)
                 {
-                    case ElementType.Circle:
-                        _CircleElementRenderer.Draw(gameTime, entity as CircleElementEntity);
-                        break;
-                    case ElementType.Elipsis:
-                        throw new NotImplementedException();
-                    case ElementType.Polygon:
-                        throw new NotImplementedException();
-                    case ElementType.Rectangle:
-                        throw new NotImplementedException();
-                    default:
-                        throw new NotSupportedException();
+                    Debug.WriteLine(entity.Position.ToString());
+                    spriteBatch.Draw(entity.Texture2D, 
+                                     ConvertUnits.ToDisplayUnits(entity.Position), 
+                                     null, 
+                                     Color.White, 
+                                     entity.Rotation,
+                                     Vector2.Zero, 
+                                     1f, 
+                                     SpriteEffects.None, 
+                                     0f); 
                 }
 
+                //switch (entity.ElementType)
+                //{
+                //    case ElementType.Circle:
+                //        _CircleElementRenderer.Draw(gameTime, entity as CircleElementEntity);
+                //        break;
+                //    case ElementType.Elipsis:
+                //        throw new NotImplementedException();
+                //    case ElementType.Polygon:
+                //        throw new NotImplementedException();
+                //    case ElementType.Rectangle:
+                //        throw new NotImplementedException();
+                //    default:
+                //        throw new NotSupportedException();
+                //}
+
+
+
             }
+
+            spriteBatch.End();
+
+
         }
     }
 }

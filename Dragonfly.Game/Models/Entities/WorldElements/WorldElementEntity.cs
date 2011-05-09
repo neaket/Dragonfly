@@ -12,10 +12,24 @@ namespace Dragonfly.Models.Entities.WorldElements
     {
         public Texture2D Texture2D { get; set; }
         public ElementType ElementType { get; set; }
-        public float Density { get; set; }
+        private float _Density;
+
+        public float Density { 
+            get
+            {
+                return _Density;
+            }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentOutOfRangeException("Density must be greater than 0");
+                }
+            }
+        }
 
         private Vector2 _Position;
-        public Vector2 Positon
+        public Vector2 Position
         {
             get
             {
@@ -34,8 +48,30 @@ namespace Dragonfly.Models.Entities.WorldElements
             }
         }
 
-        public Color Color { get; set; }
+        private float _Rotation;
+        public float Rotation
+        {
+            get
+            {
+                if (Body != null)
+                {
+                    return Body.Rotation;
+                }
+                else
+                {
+                    return _Rotation;
+                }
+            }
+            set
+            {
+                _Rotation = value;
+            }
+        }
+
+        public Color FillColor { get; set; }
+        public Color OutlineColor { get; set; }
         public Texture2D Material { get; set; }
+        public float MaterialScale { get; set; }
         public Body Body { get; set; }
         public BodyType BodyType { get; set; }
 

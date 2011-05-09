@@ -61,9 +61,9 @@ namespace Dragonfly.Models.Transformers.Common
                 green = value.Substring(2, 2);
                 blue = value.Substring(4, 2);
 
-                entity.R = Convert.ToByte(red);
-                entity.G = Convert.ToByte(green);
-                entity.B = Convert.ToByte(blue);
+                entity.R = Convert.ToByte(red, 16);
+                entity.G = Convert.ToByte(green, 16);
+                entity.B = Convert.ToByte(blue, 16);
             }            
         }
 

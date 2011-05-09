@@ -12,8 +12,9 @@ namespace Dragonfly.Models.Transformers.WorldElements
 {
     public class WorldElementTransformer : IEntityXElementTransformer<WorldElementEntity>
     {
-        public const string STR_Body = "BodyType";
-        public const string STR_Color = "Color";
+        public const string STR_BodyType = "BodyType";
+        public const string STR_FillColor = "FillColor";
+        public const string STR_OutlineColor = "OutlineColor";
         public const string STR_Material = "Material";
         public const string STR_Position = "Position";
 
@@ -76,25 +77,34 @@ namespace Dragonfly.Models.Transformers.WorldElements
 
         public void ToEntity(XElement xElement, WorldElementEntity entity)
         {
-            entity.Positon = Vector2Transformer.Instance.ToEntity(xElement.Element(TransformerSettings.WorldNamespace + STR_Position));
+            entity.Position = Vector2Transformer.Instance.ToEntity(xElement.Element(TransformerSettings.WorldNamespace + STR_Position));
 
-            if (entity.Color == null)
+            XAttribute xAttribute = xElement.Attribute(STR_FillColor);
+
+            if (xAttribute != null)
             {
-                entity.Color = ColorTransformer.Instance.ToEntity(xElement.Attribute(STR_Color));
+                entity.FillColor = ColorTransformer.Instance.ToEntity(xAttribute);
             }
-            if (entity.Material == null)
+
+            xAttribute = xElement.Attribute(STR_OutlineColor);
+            if (xAttribute != null)
             {
-                entity.Material = MaterialTransformer.Instance.ToEntity(xElement.Attribute(STR_Material));
+                entity.OutlineColor = ColorTransformer.Instance.ToEntity(xAttribute);
             }
+
+            entity.Material = MaterialTransformer.Instance.ToEntity(xElement.Attribute(STR_Material));
+            entity.BodyType = BodyTypeTransformer.Instance.ToEntity(xElement.Attribute(STR_BodyType));
+            
         }
 
         public void SetupTransformer() { }
 
         public void ToXElement(WorldElementEntity entity, XElement xElement)
         {
-            xElement.Add(Vector2Transformer.Instance.ToXElement(entity.Positon, TransformerSettings.WorldNamespace + STR_Position));
-            xElement.Add(ColorTransformer.Instance.ToXAttribute(entity.Color, STR_Color));
-
+            xElement.Add(Vector2Transformer.Instance.ToXElement(entity.Position, TransformerSettings.WorldNamespace + STR_Position));
+            xElement.Add(ColorTransformer.Instance.ToXAttribute(entity.FillColor, STR_FillColor));
+            xElement.Add(ColorTransformer.Instance.ToXAttribute(entity.OutlineColor, STR_OutlineColor));
+            xElement.Add(BodyTypeTransformer.Instance.ToXAttribute(entity.BodyType, STR_BodyType));
 
             if (entity.Material != null)
             {

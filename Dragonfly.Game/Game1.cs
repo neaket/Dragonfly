@@ -39,7 +39,7 @@ namespace Dragonfly.Module
 
             screenController.AddScreen(new BackgroundScreen(), null);
             screenController.AddScreen(new MainMenuScreen(), null);
-            var b = new TestLevel1();
+            //var b = new TestLevel1();
         }
 
         protected override void OnExiting(object sender, EventArgs args)
