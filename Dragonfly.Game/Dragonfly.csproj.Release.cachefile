@@ -1,10 +1,9 @@
 Content\gamefont.xnb
 Content\menufont.xnb
+Content\Fonts\LevelFont.xnb
 Content\background.xnb
 Content\blank.xnb
 Content\gradient.xnb
-Content\Fonts\LevelFont.xnb
 Content\Levels\TestLevel1.xml
 TestLevel1.xml
 WorldSchema1.xsd
-TestResources\TestLevel1.xml

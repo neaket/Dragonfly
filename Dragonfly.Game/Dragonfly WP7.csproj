@@ -103,6 +103,8 @@
     <Compile Include="Engine\ScreenManager\ScreenController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\Entities\WorldElements\IWorldElementEntity.cs" />
+    <Compile Include="Models\Entities\WorldElements\TextElementEntity.cs" />
     <Compile Include="Models\Transformers\Common\ColorTransformer.cs" />
     <Compile Include="Models\Transformers\Common\EntityXAttributeTransformer.cs" />
     <Compile Include="Models\Transformers\Common\IEntityXAttributeTransformer.cs" />
@@ -113,6 +115,7 @@
     <Compile Include="Models\Transformers\Exceptions\TransformerException.cs" />
     <Compile Include="Models\Transformers\WorldElements\BodyTypeTransformer.cs" />
     <Compile Include="Models\Transformers\WorldElements\IWorldElementTransformer.cs" />
+    <Compile Include="Models\Transformers\WorldElements\TextElementTransformer.cs" />
     <Compile Include="Module\Content\MaterialContent.cs" />
     <Compile Include="Module\Content\MenuResources.cs" />
     <Compile Include="Module\Levels\Level1.cs" />

@@ -45,7 +45,8 @@ namespace Dragonfly.Models.Transformers.WorldElements
         private List<IWorldElementTransformer> ChildTransformers = new List<IWorldElementTransformer>() 
         {
             RectangleElementTransformer.Instance,
-            CircleElementTransformer.Instance
+            CircleElementTransformer.Instance,
+            TextElementTransformer.Instance
         };          
 
 

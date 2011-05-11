@@ -26,6 +26,11 @@ namespace Dragonfly.Engine.Levels
         protected Dictionary<string, Texture2D> _materials;
         protected TextureGenerator _textureGenerator;
 
+#if DEBUG
+        private WeakReference gcTest;
+        private int gcCount = 0;
+#endif
+
         public GameLevel(string levelXml, Dictionary<string, Texture2D> materials)
         {
             if (String.IsNullOrEmpty(levelXml))
@@ -109,8 +114,26 @@ namespace Dragonfly.Engine.Levels
 
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
-
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
+
+            #region garbage collection testing
+#if DEBUG            
+            if (gcTest == null)
+            {
+                gcTest = new WeakReference(new object());
+            }
+            if (!gcTest.IsAlive)
+            {
+                gcCount++;
+                Debug.WriteLine(String.Format("Garbage has been collected {0} times.", gcCount));
+
+                gcTest = new WeakReference(new object());
+            }
+
+            var g = (gameTime).ToString();
+            g += "a";            
+#endif
+            #endregion
 
             if (!IsActive || otherScreenHasFocus || coveredByOtherScreen)
             {

@@ -33,7 +33,6 @@ namespace Dragonfly.Engine.Renderer
             {
                 if (entity.Texture2D != null)
                 {
-                    Debug.WriteLine(entity.Position.ToString());
                     spriteBatch.Draw(entity.Texture2D, 
                                      ConvertUnits.ToDisplayUnits(entity.Position), 
                                      null, 

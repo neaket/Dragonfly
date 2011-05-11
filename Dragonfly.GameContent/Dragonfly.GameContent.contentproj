@@ -71,11 +71,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fonts\LevelFont.spritefont">
+      <Name>LevelFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
     <None Include="Levels\TestLevel1.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TestLevel1</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Levels\WorldSchema1.xsd">
+      <SubType>Designer</SubType>
+      <Name>WorldSchema1</Name>
+      <Importer>XmlImporter</Importer>
     </None>
   </ItemGroup>
   <ItemGroup>

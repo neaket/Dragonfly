@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace Dragonfly.Models.Transformers.WorldElements
 {
-    public class CircleElementTransformer : EntityXElementTransformer<CircleElementEntity>, IWorldElementTransformer
+    public class CircleElementTransformer : EntityXElementTransformer<CircleElementEntity>
     {
         public const string STR_CircleElement = "CircleElement";
 
@@ -42,7 +42,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
             throw new NotImplementedException();
         }
 
-        public WorldElementEntity ToEntity(XElement xElement)
+        public IWorldElementEntity ToEntity(XElement xElement)
         {
             CircleElementEntity entity = new CircleElementEntity();
 
@@ -51,7 +51,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
             return entity;
         }
 
-        public XElement FromEntity(WorldElementEntity entity)
+        public XElement FromEntity(IWorldElementEntity entity)
         {
             throw new NotImplementedException();
         }

@@ -8,7 +8,7 @@ using FarseerPhysics.Dynamics;
 
 namespace Dragonfly.Models.Entities.WorldElements
 {
-    public class WorldElementEntity
+    public class WorldElementEntity : IWorldElementEntity
     {
         public Texture2D Texture2D { get; set; }
         public ElementType ElementType { get; set; }

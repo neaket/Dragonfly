@@ -11,7 +11,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
     {
         string EntityName { get; }
         Type Type { get; }
-        WorldElementEntity ToWorldElementEntity(XElement xElement);
-        XElement FromWorldElementEntity(WorldElementEntity entity);
+        IWorldElementEntity ToWorldElementEntity(XElement xElement);
+        XElement FromWorldElementEntity(IWorldElementEntity entity);
     }
 }
