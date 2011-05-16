@@ -10,12 +10,12 @@ namespace Dragonfly.Models.Entities.World
     public class WorldEntity
     {
         public PhysicsSettingsEntity PhysicsSettings { get; set; }
-        public List<WorldElementEntity> WorldElements { get; set; }
+        public List<IWorldElementEntity> WorldElements { get; set; }
         public WorldInfoEntity WorldInfo { get; set; }
 
         public WorldEntity()
         {
-            WorldElements = new List<WorldElementEntity>();
+            WorldElements = new List<IWorldElementEntity>();
         }
 
         public override bool Equals(object obj)
@@ -55,6 +55,13 @@ namespace Dragonfly.Models.Entities.World
             }
 
             return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+            return base.GetHashCode();
+           
         }
     }
 }

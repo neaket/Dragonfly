@@ -7,7 +7,7 @@ using FarseerPhysics.Common;
 
 namespace Dragonfly.Models.Entities.WorldElements
 {
-    public class PolygonElementEntity : WorldElementEntity
+    public class PolygonElementEntity : PhysicsWorldElementEntity
     {
         public Vertices Vertices { get; set; }
     }

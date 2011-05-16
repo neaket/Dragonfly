@@ -66,12 +66,12 @@ namespace Dragonfly.Models.Transformers.WorldElements
             get { return typeof(CircleElementEntity); }
         }
 
-        public WorldElementEntity ToWorldElementEntity(XElement xElement)
+        public PhysicsWorldElementEntity ToWorldElementEntity(XElement xElement)
         {
             throw new NotImplementedException();
         }
 
-        public XElement FromWorldElementEntity(WorldElementEntity entity)
+        public XElement FromWorldElementEntity(PhysicsWorldElementEntity entity)
         {
             throw new NotImplementedException();
         }

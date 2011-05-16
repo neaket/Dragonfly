@@ -68,32 +68,37 @@ namespace Dragonfly.Engine.Levels
 
             foreach (var entity in _worldEntity.WorldElements)
             {
-                entity.Texture2D = _textureGenerator.TextureFromWorldElement(entity);
-                Body body;
-                switch (entity.ElementType)
+
+                if (entity is PhysicsWorldElementEntity)
                 {
-                    case ElementType.Circle:
-                        var circleEntity = entity as CircleElementEntity;
-                        body = BodyFactory.CreateCircle(_world, circleEntity.Radius, circleEntity.Density);
-                        break;
-                    case ElementType.Elipsis:
-                        var elipsisEntity = entity as ElipsisElementEntity;
-                        body = BodyFactory.CreateEllipse(_world, elipsisEntity.Radius.X, elipsisEntity.Radius.Y, 8, elipsisEntity.Density);
-                        break;
-                    case ElementType.Polygon:
-                        var polygonEntity = entity as PolygonElementEntity;
-                        body = BodyFactory.CreatePolygon(_world, polygonEntity.Vertices, polygonEntity.Density);
-                        break;
-                    case ElementType.Rectangle:
-                        var rectangleEntity = entity as RectangleElementEntity;
-                        body = BodyFactory.CreateRectangle(_world, rectangleEntity.Width, rectangleEntity.Height, rectangleEntity.Density);
-                        break;
-                    default:
-                        throw new NotSupportedException();
+                    PhysicsWorldElementEntity physicsEntity = entity as PhysicsWorldElementEntity;
+                    physicsEntity.Texture2D = _textureGenerator.TextureFromWorldElement(physicsEntity);
+                    Body body;
+                    switch (physicsEntity.ElementType)
+                    {
+                        case ElementType.Circle:
+                            var circleEntity = physicsEntity as CircleElementEntity;
+                            body = BodyFactory.CreateCircle(_world, circleEntity.Radius, circleEntity.Density);
+                            break;
+                        case ElementType.Elipsis:
+                            var elipsisEntity = physicsEntity as ElipsisElementEntity;
+                            body = BodyFactory.CreateEllipse(_world, elipsisEntity.Radius.X, elipsisEntity.Radius.Y, 8, elipsisEntity.Density);
+                            break;
+                        case ElementType.Polygon:
+                            var polygonEntity = physicsEntity as PolygonElementEntity;
+                            body = BodyFactory.CreatePolygon(_world, polygonEntity.Vertices, polygonEntity.Density);
+                            break;
+                        case ElementType.Rectangle:
+                            var rectangleEntity = physicsEntity as RectangleElementEntity;
+                            body = BodyFactory.CreateRectangle(_world, rectangleEntity.Width, rectangleEntity.Height, rectangleEntity.Density);
+                            break;
+                        default:
+                            throw new NotSupportedException();
+                    }
+                    body.Position = physicsEntity.Position;
+                    body.BodyType = physicsEntity.BodyType;
+                    physicsEntity.Body = body;
                 }
-                body.Position = entity.Position;
-                body.BodyType = entity.BodyType;
-                entity.Body = body;
             }
         }
 

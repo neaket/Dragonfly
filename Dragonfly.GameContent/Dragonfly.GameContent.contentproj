@@ -81,6 +81,7 @@
       <Name>TestLevel1</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Levels\WorldSchema1.xsd">
       <SubType>Designer</SubType>

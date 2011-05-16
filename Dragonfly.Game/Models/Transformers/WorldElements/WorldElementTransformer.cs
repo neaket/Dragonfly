@@ -10,7 +10,7 @@ using Dragonfly.Models.Transformers.Exceptions;
 
 namespace Dragonfly.Models.Transformers.WorldElements
 {
-    public class WorldElementTransformer : IEntityXElementTransformer<WorldElementEntity>
+    public class WorldElementTransformer : IEntityXElementTransformer<PhysicsWorldElementEntity>
     {
         public const string STR_BodyType = "BodyType";
         public const string STR_FillColor = "FillColor";
@@ -45,12 +45,12 @@ namespace Dragonfly.Models.Transformers.WorldElements
         private List<IWorldElementTransformer> ChildTransformers = new List<IWorldElementTransformer>() 
         {
             RectangleElementTransformer.Instance,
-            CircleElementTransformer.Instance,
+            //CircleElementTransformer.Instance,
             TextElementTransformer.Instance
         };          
 
 
-        public WorldElementEntity ToEntity(XElement xElement)
+        public IWorldElementEntity ToEntity(XElement xElement)
         {
             foreach (var transformer in ChildTransformers)            
             {
@@ -63,7 +63,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
             throw new TransformerException(String.Format("World element XElement name '{0}' is unknown.", xElement.Name.LocalName));
         }
 
-        public XElement ToXElement(WorldElementEntity entity)
+        public XElement ToXElement(IWorldElementEntity entity)
         {
             foreach (var transformer in ChildTransformers)
             {
@@ -76,7 +76,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
             throw new TransformerException(String.Format("World element entity type '{0}' is unknown.", entity.GetType()));
         }
 
-        public void ToEntity(XElement xElement, WorldElementEntity entity)
+        public void ToEntity(XElement xElement, PhysicsWorldElementEntity entity)
         {
             entity.Position = Vector2Transformer.Instance.ToEntity(xElement.Element(TransformerSettings.WorldNamespace + STR_Position));
 
@@ -100,7 +100,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
 
         public void SetupTransformer() { }
 
-        public void ToXElement(WorldElementEntity entity, XElement xElement)
+        public void ToXElement(PhysicsWorldElementEntity entity, XElement xElement)
         {
             xElement.Add(Vector2Transformer.Instance.ToXElement(entity.Position, TransformerSettings.WorldNamespace + STR_Position));
             xElement.Add(ColorTransformer.Instance.ToXAttribute(entity.FillColor, STR_FillColor));

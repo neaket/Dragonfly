@@ -17,6 +17,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input.Touch;
 using System.IO;
 using System.IO.IsolatedStorage;
+using Dragonfly.Module.Content;
 #endregion
 
 namespace Dragonfly.Engine.ScreenManager
@@ -116,6 +117,9 @@ namespace Dragonfly.Engine.ScreenManager
         {
             // Load content belonging to the screen manager.
             ContentManager content = Game.Content;
+
+            //TODO remove next line!!!!
+            MenuResources.LoadContent(content);
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = content.Load<SpriteFont>("menufont");

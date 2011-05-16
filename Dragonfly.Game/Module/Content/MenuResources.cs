@@ -14,7 +14,7 @@ namespace Dragonfly.Module.Content
 
         public static void LoadContent(ContentManager content)
         {            
-            MenuFont = content.Load<SpriteFont>(SubDir + "menufont");
+            MenuFont = content.Load<SpriteFont>("menufont");
         }
 
         public static void UnloadContent()

@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Dragonfly.Models.Entities.WorldElements
 {
-    public class RectangleElementEntity : WorldElementEntity
+    public class RectangleElementEntity : PhysicsWorldElementEntity
     {
         public float Width { get; set; }
         public float Height { get; set; }

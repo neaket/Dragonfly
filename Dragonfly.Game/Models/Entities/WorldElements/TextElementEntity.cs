@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Dragonfly.Models.Entities.WorldElements
 {
-    public class TextElementEntity
+    public class TextElementEntity : IWorldElementEntity
     {
         public Vector2 Position { get; set; }
         public SpriteFont Font { get; set; }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Dragonfly.Models.Entities.WorldElements
 {
-    public class CircleElementEntity : WorldElementEntity
+    public class CircleElementEntity : PhysicsWorldElementEntity
     {
         public float Radius { get; set; }
     }

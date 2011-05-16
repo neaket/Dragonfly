@@ -8,7 +8,7 @@ namespace Dragonfly.Engine.Renderers
 {
     public static class ConvertUnits
     {
-        private static float _displayUnitsToSimUnitsRatio = 1f;
+        private static float _displayUnitsToSimUnitsRatio = 100f;
         private static float _simUnitsToDisplayUnitsRatio = 1 / _displayUnitsToSimUnitsRatio;
 
         public static void SetDisplayUnitToSimUnitRatio(float displayUnitsPerSimUnit)

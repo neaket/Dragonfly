@@ -31,18 +31,28 @@ namespace Dragonfly.Engine.Renderer
             spriteBatch.Begin(0, null, null, null, null, null, _camera.View);
             foreach (var entity in _WorldEntity.WorldElements)
             {
-                if (entity.Texture2D != null)
+                if (entity is PhysicsWorldElementEntity)
                 {
-                    spriteBatch.Draw(entity.Texture2D, 
-                                     ConvertUnits.ToDisplayUnits(entity.Position), 
-                                     null, 
-                                     Color.White, 
-                                     entity.Rotation,
-                                     Vector2.Zero, 
-                                     1f, 
-                                     SpriteEffects.None, 
-                                     0f); 
+                    PhysicsWorldElementEntity physicsEntity = entity as PhysicsWorldElementEntity;
+                    if (physicsEntity.Texture2D != null)
+                    {
+                        spriteBatch.Draw(physicsEntity.Texture2D,
+                                         ConvertUnits.ToDisplayUnits(physicsEntity.Position),
+                                         null,
+                                         Color.White,
+                                         physicsEntity.Rotation,
+                                         physicsEntity.Origin,
+                                         1f,
+                                         SpriteEffects.None,
+                                         0f);
+                    }
+                } else if (entity is TextElementEntity){
+                    TextElementEntity textEntity = entity as TextElementEntity;
+                    spriteBatch.DrawString(textEntity.Font, textEntity.Text, ConvertUnits.ToDisplayUnits(textEntity.Position), textEntity.FillColor);
                 }
+
+
+               
 
                 //switch (entity.ElementType)
                 //{

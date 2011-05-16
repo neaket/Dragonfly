@@ -42,7 +42,7 @@ namespace Dragonfly.Models.Transformers.Common
             else
             {
                 value = value.Substring(1);
-                if (value.Length != 8 && value.Length != 6)
+                if (value.Length != 8 && value.Length != 6 && value.Length != 3)
                 {
                     throw new TransformerException(String.Format("The color '{0}' is not in a valid format."));
                 }
@@ -55,11 +55,26 @@ namespace Dragonfly.Models.Transformers.Common
                 {
                     alpha = value.Substring(0, 2);
                     value = value.Substring(2);
-                    entity.A = Convert.ToByte(alpha);
+                    entity.A = Convert.ToByte(alpha, 16);
                 }
-                red = value.Substring(0, 2);
-                green = value.Substring(2, 2);
-                blue = value.Substring(4, 2);
+                else
+                {
+                    entity.A = 255;
+                }
+
+                if (value.Length == 6)
+                {
+                    red = value.Substring(0, 2);
+                    green = value.Substring(2, 2);
+                    blue = value.Substring(4, 2);
+                }
+                else// if (value.Length == 3)
+                {
+                    red = value.Substring(0, 1) + "0";
+                    green = value.Substring(1, 1) + "0";
+                    blue = value.Substring(2, 1) + "0";
+                }
+
 
                 entity.R = Convert.ToByte(red, 16);
                 entity.G = Convert.ToByte(green, 16);

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 using Dragonfly.Models.Entities.WorldElements;
+using Dragonfly.Module.Content;
+using Dragonfly.Models.Transformers.Common;
 
 namespace Dragonfly.Models.Transformers.WorldElements
 {
@@ -51,13 +53,20 @@ namespace Dragonfly.Models.Transformers.WorldElements
             get { return _Type; }
         }
 
-        public WorldElementEntity ToWorldElementEntity(XElement xElement)
+        public IWorldElementEntity ToWorldElementEntity(XElement xElement)
         {
-            WorldElementEntity entity = new WorldElementEntity();
+            TextElementEntity entity = new TextElementEntity();
+
+            entity.Font = MenuResources.MenuFont;
+            entity.Text = xElement.Attribute(STR_Text).Value;
+            entity.Position = Vector2Transformer.Instance.ToEntity(xElement.Element(TransformerSettings.WorldNamespace + WorldElementTransformer.STR_Position));
+            entity.FillColor = ColorTransformer.Instance.ToEntity(xElement.Attribute(WorldElementTransformer.STR_FillColor));
+
+            return entity;
 
         }
 
-        public XElement FromWorldElementEntity(WorldElementEntity entity)
+        public XElement FromWorldElementEntity(IWorldElementEntity entity)
         {
             throw new NotImplementedException();
         }

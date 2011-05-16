@@ -71,7 +71,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
             get { return _Type; }
         }
 
-        public WorldElementEntity ToWorldElementEntity(XElement xElement)
+        public IWorldElementEntity ToWorldElementEntity(XElement xElement)
         {
             RectangleElementEntity entity = new RectangleElementEntity();
             
@@ -80,7 +80,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
             return entity;            
         }
 
-        public XElement FromWorldElementEntity(WorldElementEntity entity)
+        public XElement FromWorldElementEntity(IWorldElementEntity entity)
         {
             RectangleElementEntity rectangle = entity as RectangleElementEntity;
             if (rectangle == null)

@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using FarseerPhysics.Common.Decomposition;
 using FarseerPhysics.Collision;
 using Dragonfly.Models.Entities.WorldElements;
+using Dragonfly.Engine.Renderers;
 
 namespace Dragonfly.Engine.Generators
 {
@@ -24,7 +25,7 @@ namespace Dragonfly.Engine.Generators
             _effect = new BasicEffect(graphicsDevice);
         }
 
-        public Texture2D TextureFromWorldElement(WorldElementEntity elementEntity)
+        public Texture2D TextureFromWorldElement(PhysicsWorldElementEntity elementEntity)
         {
             Vertices vertices;
             switch (elementEntity.ElementType)
@@ -35,23 +36,26 @@ namespace Dragonfly.Engine.Generators
                     throw new NotImplementedException();
                 case ElementType.Polygon:
                     PolygonElementEntity polygon = elementEntity as PolygonElementEntity;
-                    throw new NotImplementedException();
+                    vertices = polygon.Vertices;
+                    polygon.Origin = vertices.GetCentroid();
+                    break;                    
                 case ElementType.Rectangle:
                     RectangleElementEntity rectangle = elementEntity as RectangleElementEntity;
                     vertices = new Vertices(4);
                     vertices.Add(Vector2.Zero);
-                    vertices.Add(new Vector2(rectangle.Width, 0));
-                    vertices.Add(new Vector2(rectangle.Width, rectangle.Height));
-                    vertices.Add(new Vector2(0, rectangle.Height));
+                    vertices.Add(new Vector2(ConvertUnits.ToDisplayUnits(rectangle.Width), 0));
+                    vertices.Add(new Vector2(ConvertUnits.ToDisplayUnits(rectangle.Width), ConvertUnits.ToDisplayUnits(rectangle.Height)));
+                    vertices.Add(new Vector2(0, ConvertUnits.ToDisplayUnits(rectangle.Height)));
+                    rectangle.Origin = new Vector2(ConvertUnits.ToDisplayUnits(rectangle.Width / 2f), ConvertUnits.ToDisplayUnits(rectangle.Height / 2f));
                     break;
                 default:
                     throw new NotSupportedException(String.Format("ElementType '{0}' is not supported", elementEntity.ElementType));                                        
             }
 
-            return TextureFromVertices(vertices, elementEntity.Material, elementEntity.FillColor, elementEntity.OutlineColor, elementEntity.MaterialScale);            
+            return TextureFromVertices(vertices, elementEntity.Material, elementEntity.FillColor, elementEntity.OutlineColor.A != 0, elementEntity.OutlineColor, elementEntity.MaterialScale);            
         }        
 
-        public Texture2D TextureFromVertices(Vertices vertices, Texture2D material, Color fillColor, Color outlineColor, float materialScale)
+        public Texture2D TextureFromVertices(Vertices vertices, Texture2D material, Color fillColor, bool hasOutline, Color outlineColor, float materialScale)
         {
             Vertices verts = new Vertices(vertices);
 
@@ -89,20 +93,29 @@ namespace Dragonfly.Engine.Generators
             }
 
             //outline
-            VertexPositionColor[] verticesOutline = new VertexPositionColor[2 * verts.Count];
-            for (int i = 0; i < verts.Count; i++)
+            VertexPositionColor[] verticesOutline;
+            
+            if (!hasOutline)
             {
-                verticesOutline[2 * i].Position = new Vector3(verts[i], 0f);
-                verticesOutline[2 * i + 1].Position = new Vector3(verts.NextVertex(i), 0f);
-                verticesOutline[2 * i + 1].Color = verticesOutline[2 * i + 1].Color = outlineColor;
+                verticesOutline = new VertexPositionColor[0];
+            } 
+            else 
+            {
+                verticesOutline = new VertexPositionColor[2 * verts.Count];
+                for (int i = 0; i < verts.Count; i++)
+                {
+                    verticesOutline[2 * i].Position = new Vector3(verts[i], 0f);
+                    verticesOutline[2 * i + 1].Position = new Vector3(verts.NextVertex(i), 0f);
+                    verticesOutline[2 * i].Color = verticesOutline[2 * i + 1].Color = outlineColor;
+                }
             }
 
             Vector2 vertsSize = new Vector2(vertsBounds.UpperBound.X - vertsBounds.LowerBound.X, vertsBounds.UpperBound.Y - vertsBounds.LowerBound.Y);
 
-            return RenderTexture((int)(vertsSize.X), (int)vertsSize.Y, material, verticesFill, verticesOutline);            
+            return RenderTexture((int)System.Math.Ceiling(vertsSize.X), (int)System.Math.Ceiling(vertsSize.Y), material, verticesFill, hasOutline, verticesOutline);            
         }
 
-        public Texture2D RenderTexture(int width, int height, Texture2D material, List<VertexPositionColorTexture[]> verticesFill, VertexPositionColor[] verticesOutline)
+        public Texture2D RenderTexture(int width, int height, Texture2D material, List<VertexPositionColorTexture[]> verticesFill, bool hasOutline, VertexPositionColor[] verticesOutline)
         {
             Matrix halfPixelOffset = Matrix.CreateTranslation(-0.5f, -0.5f, 0f);
             PresentationParameters pp = _graphicsDevice.PresentationParameters;
@@ -126,10 +139,13 @@ namespace Dragonfly.Engine.Generators
                 _graphicsDevice.DrawUserPrimitives(PrimitiveType.TriangleList, verticesFill[i], 0, verticesFill[i].Length / 3);
             }
 
-            //render outline
-            _effect.TextureEnabled = false;
-            _effect.Techniques[0].Passes[0].Apply();
-            _graphicsDevice.DrawUserPrimitives(PrimitiveType.LineList, verticesOutline, 0, verticesOutline.Length / 2);
+            if (hasOutline)
+            { 
+                //render outline
+                _effect.TextureEnabled = false;
+                _effect.Techniques[0].Passes[0].Apply();
+                _graphicsDevice.DrawUserPrimitives(PrimitiveType.LineList, verticesOutline, 0, verticesOutline.Length / 2);
+            }
             _graphicsDevice.SetRenderTarget(null);
 
             return texture;

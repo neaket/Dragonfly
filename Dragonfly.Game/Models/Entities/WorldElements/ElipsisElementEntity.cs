@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Dragonfly.Models.Entities.WorldElements
 {
-    public class ElipsisElementEntity : WorldElementEntity
+    public class ElipsisElementEntity : PhysicsWorldElementEntity
     {
         public Vector2 Radius { get; set; }
     }
