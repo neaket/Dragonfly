@@ -5,12 +5,15 @@ using System.Text;
 using Dragonfly.Models.Transformers.Common;
 using Dragonfly.Models.Entities.WorldElements;
 using System.Xml.Linq;
+using Dragonfly.Models.Transformers.Exceptions;
 
 namespace Dragonfly.Models.Transformers.WorldElements
 {
-    public class PolygonElementTransformer : EntityXElementTransformer<PolygonElementEntity>
+    public class PolygonElementTransformer : EntityXElementTransformer<PolygonElementEntity>, IWorldElementTransformer
     {
         public const string STR_PolygonElement = "PolygonElement";
+        public const string STR_Vertices = "Vertices";
+        
         
         #region Instance
         private static PolygonElementTransformer _Instance;
@@ -33,11 +36,47 @@ namespace Dragonfly.Models.Transformers.WorldElements
         public override void ToXElement(PolygonElementEntity entity, XElement xElement)
         {
             WorldElementTransformer.Instance.ToXElement(entity, xElement);
-            throw new NotImplementedException();
+
+            xElement.Add(VerticesTransformer.Instance.ToXAttribute(entity.Vertices, STR_Vertices));
+            
         }
 
         public override void ToEntity(System.Xml.Linq.XElement xElement, PolygonElementEntity entity)
         {
+            WorldElementTransformer.Instance.ToEntity(xElement, entity);
+
+            entity.Vertices = VerticesTransformer.Instance.ToEntity(xElement.Attribute(STR_Vertices));
+        }
+
+        public string EntityName
+        {
+            get { return STR_PolygonElement; }
+        }
+
+        private Type _Type = typeof(PolygonElementEntity);
+        public Type Type
+        {
+            get { return _Type; }
+        }
+
+        public IWorldElementEntity ToWorldElementEntity(XElement xElement)
+        {
+            PolygonElementEntity entity = new PolygonElementEntity();
+            ToEntity(xElement, entity);
+            return entity;            
+        }
+
+        public XElement FromWorldElementEntity(IWorldElementEntity entity)
+        {
+            PolygonElementEntity polygon = entity as PolygonElementEntity;
+            if (polygon == null)
+            {
+                throw new TransformerException("Entity was not of type " + typeof(PolygonElementEntity).FullName);
+            }
+
+            XElement xElement = new XElement(TransformerSettings.WorldNamespace + EntityName);
+            ToXElement(polygon, xElement);
+            return xElement;
             throw new NotImplementedException();
         }
     }

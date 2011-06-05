@@ -103,6 +103,7 @@
         <xs:element name="Position" type="Vector2" />
         <xs:element name="BodyInfo" type="BodyInfo" minOccurs="0" />
       </xs:sequence>
+      <xs:attribute name="Name" type="xs:string" use="optional" />
       <xs:attribute name="Material" type="xs:string" use="optional" />
       <xs:attribute name="FillColor" type="Color" use="optional" />
       <xs:attribute name="OutlineColor" type="Color" use="optional" />
@@ -141,10 +142,8 @@
   <xs:complexType name="PolygonElement">
     <xs:complexContent>
       <xs:extension base="WorldElement">
-        <xs:sequence>
-          <xs:element name="Vertices" type="Vertices" />
-        </xs:sequence>        
-      </xs:extension>
+        <xs:attribute name="Vertices" type="Vertices" />
+      </xs:extension>     
     </xs:complexContent>
   </xs:complexType>
 

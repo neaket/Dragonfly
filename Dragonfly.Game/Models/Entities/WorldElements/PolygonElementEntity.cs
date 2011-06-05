@@ -10,5 +10,14 @@ namespace Dragonfly.Models.Entities.WorldElements
     public class PolygonElementEntity : PhysicsWorldElementEntity
     {
         public Vertices Vertices { get; set; }
+
+        public override ElementType ElementType
+        {
+            get { return ElementType.Polygon; }
+        }
+
+
+        
+
     }
 }

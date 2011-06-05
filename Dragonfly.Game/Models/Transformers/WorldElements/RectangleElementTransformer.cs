@@ -52,7 +52,6 @@ namespace Dragonfly.Models.Transformers.WorldElements
         {
             WorldElementTransformer.Instance.ToEntity(xElement, entity);
 
-            entity.ElementType = ElementType.Rectangle;
 
             entity.Width = (float)xElement.Attribute(STR_Width);
             entity.Height = (float)xElement.Attribute(STR_Height);

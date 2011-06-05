@@ -5,14 +5,16 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using FarseerPhysics.Dynamics;
+using System.Xml.Serialization;
 
 namespace Dragonfly.Models.Entities.WorldElements
 {
-    public class PhysicsWorldElementEntity : IWorldElementEntity
+    public abstract class PhysicsWorldElementEntity : IWorldElementEntity
     {
+        public string Name { get; set; }        
         public Texture2D Texture2D { get; set; }
         public Vector2 Origin { get; set; }
-        public ElementType ElementType { get; set; }
+        public abstract ElementType ElementType { get; }
         private float _Density;
         
 

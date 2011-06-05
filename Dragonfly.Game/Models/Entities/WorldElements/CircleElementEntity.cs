@@ -8,5 +8,13 @@ namespace Dragonfly.Models.Entities.WorldElements
     public class CircleElementEntity : PhysicsWorldElementEntity
     {
         public float Radius { get; set; }
+
+        public override ElementType ElementType
+        {
+            get
+            {
+                return ElementType.Circle;
+            }
+        }
     }
 }

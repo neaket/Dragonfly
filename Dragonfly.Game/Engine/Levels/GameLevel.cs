@@ -25,6 +25,8 @@ namespace Dragonfly.Engine.Levels
         protected World _world;
         protected Dictionary<string, Texture2D> _materials;
         protected TextureGenerator _textureGenerator;
+        protected Dictionary<string, IWorldElementEntity> WorldElements;
+
 
 #if DEBUG
         private WeakReference gcTest;
@@ -65,7 +67,7 @@ namespace Dragonfly.Engine.Levels
             _textureGenerator = new TextureGenerator(ScreenManager.GraphicsDevice, _materials);
             _world = new World(_worldEntity.PhysicsSettings.Gravity);
 
-
+            WorldElements = new Dictionary<string, IWorldElementEntity>(_worldEntity.WorldElements.Count);
             foreach (var entity in _worldEntity.WorldElements)
             {
 
@@ -98,6 +100,12 @@ namespace Dragonfly.Engine.Levels
                     body.Position = physicsEntity.Position;
                     body.BodyType = physicsEntity.BodyType;
                     physicsEntity.Body = body;
+
+                    if (physicsEntity.Name != null)
+                    {
+                        //TODO prevent duplicate names... or something else
+                        WorldElements.Add(physicsEntity.Name, physicsEntity);
+                    }
                 }
             }
         }
@@ -144,6 +152,8 @@ namespace Dragonfly.Engine.Levels
             {
                 return;
             }
+
+            
 
             _world.Step((float)gameTime.ElapsedGameTime.TotalSeconds);
         }

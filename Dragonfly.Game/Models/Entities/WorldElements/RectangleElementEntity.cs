@@ -10,5 +10,10 @@ namespace Dragonfly.Models.Entities.WorldElements
     {
         public float Width { get; set; }
         public float Height { get; set; }
+
+        public override ElementType ElementType
+        {
+            get { return ElementType.Rectangle; }
+        }
     }
 }

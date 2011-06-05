@@ -9,5 +9,10 @@ namespace Dragonfly.Models.Entities.WorldElements
     public class ElipsisElementEntity : PhysicsWorldElementEntity
     {
         public Vector2 Radius { get; set; }
+
+        public override ElementType ElementType
+        {
+            get { return ElementType.Elipsis; }
+        }
     }
 }

@@ -14,7 +14,7 @@
     <TextElement Font="GuiFont" Text="Test Level :)" HorizontalAlignment="Center" VerticalAlignment="Middle" FillColor="#ffffff">
       <Position X="0" Y="0"/>
     </TextElement>
-    <RectangleElement FillColor="#ff0000" Width=".1" Height=".1" BodyType="Dynamic">
+    <RectangleElement Name="The Cool One" FillColor="#ff0000" Width=".1" Height=".1" BodyType="Dynamic">
       <Position X="0" Y="-2"/>
     </RectangleElement>
     <RectangleElement FillColor="#00ff00" Width="2" Height=".05" BodyType="Static">
@@ -29,6 +29,10 @@
     <RectangleElement FillColor="#ff00ff" Width=".2" Height=".2" BodyType="Dynamic">
       <Position X="-.9" Y="0"/>
     </RectangleElement>
+
+    <PolygonElement FillColor="#ffff00" BodyType="Dynamic" Vertices="0,0 1,0  1,1 0,1">
+      <Position X="0" Y="-3"/>
+    </PolygonElement>
     <!--<RectangleElement FillColor="#ff00ff" Width="." Height="1" BodyType="Static">
       <Position X="0" Y="0"/>
     </RectangleElement>-->

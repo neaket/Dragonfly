@@ -68,6 +68,15 @@
     <Reference Include="mscorlib">
       <Private>False</Private>
     </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.mocks">
+      <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="pnunit.framework">
+      <HintPath>..\packages\NUnit.2.5.10.11092\lib\pnunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Private>False</Private>
     </Reference>
@@ -112,6 +121,7 @@
     <Compile Include="Models\Transformers\Common\MaterialTransformer.cs" />
     <Compile Include="Models\Transformers\Common\StringTransformer.cs" />
     <Compile Include="Models\Transformers\Common\TransformerSettings.cs" />
+    <Compile Include="Models\Transformers\Common\VerticesTransformer.cs" />
     <Compile Include="Models\Transformers\Exceptions\TransformerException.cs" />
     <Compile Include="Models\Transformers\WorldElements\BodyTypeTransformer.cs" />
     <Compile Include="Models\Transformers\WorldElements\IWorldElementTransformer.cs" />
@@ -155,6 +165,7 @@
     <Compile Include="Module\Screens\MessageBoxScreen.cs" />
     <Compile Include="Module\Screens\OptionsMenuScreen.cs" />
     <Compile Include="Module\Screens\PlayerIndexEventArgs.cs" />
+    <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </None>

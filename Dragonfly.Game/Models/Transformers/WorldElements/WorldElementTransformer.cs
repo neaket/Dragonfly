@@ -12,6 +12,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
 {
     public class WorldElementTransformer : IEntityXElementTransformer<PhysicsWorldElementEntity>
     {
+        public const string STR_Name = "Name";
         public const string STR_BodyType = "BodyType";
         public const string STR_FillColor = "FillColor";
         public const string STR_OutlineColor = "OutlineColor";
@@ -46,6 +47,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
         {
             RectangleElementTransformer.Instance,
             //CircleElementTransformer.Instance,
+            PolygonElementTransformer.Instance,
             TextElementTransformer.Instance
         };          
 
@@ -78,9 +80,11 @@ namespace Dragonfly.Models.Transformers.WorldElements
 
         public void ToEntity(XElement xElement, PhysicsWorldElementEntity entity)
         {
+            XAttribute xAttribute;
+            entity.Name = (xAttribute = xElement.Attribute(STR_Name)) != null ? (string)xAttribute : null;
             entity.Position = Vector2Transformer.Instance.ToEntity(xElement.Element(TransformerSettings.WorldNamespace + STR_Position));
 
-            XAttribute xAttribute = xElement.Attribute(STR_FillColor);
+            xAttribute = xElement.Attribute(STR_FillColor);
 
             if (xAttribute != null)
             {
@@ -102,6 +106,11 @@ namespace Dragonfly.Models.Transformers.WorldElements
 
         public void ToXElement(PhysicsWorldElementEntity entity, XElement xElement)
         {
+            if (entity.Name != null)
+            {
+                xElement.Add(new XAttribute(STR_Name, entity.Name));
+            }
+
             xElement.Add(Vector2Transformer.Instance.ToXElement(entity.Position, TransformerSettings.WorldNamespace + STR_Position));
             xElement.Add(ColorTransformer.Instance.ToXAttribute(entity.FillColor, STR_FillColor));
             xElement.Add(ColorTransformer.Instance.ToXAttribute(entity.OutlineColor, STR_OutlineColor));

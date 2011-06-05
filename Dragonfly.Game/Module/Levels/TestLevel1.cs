@@ -25,6 +25,8 @@ namespace Dragonfly.Module.Levels
         protected WorldEntity _WorldEntity;
         public float TimeLeftOver;
 
+        private RectangleElementEntity TheCoolOne;
+
         protected WorldRenderer _WorldRenderer;
 
         public TestLevel1(Dictionary<string, Texture2D> materials) 
@@ -32,6 +34,13 @@ namespace Dragonfly.Module.Levels
         {
             
 
+        }
+
+        public override void LoadContent()
+        {
+            base.LoadContent();
+
+            TheCoolOne = WorldElements["The Cool One"] as RectangleElementEntity;
         }
 
         public override void Draw(GameTime gameTime)
@@ -44,6 +53,7 @@ namespace Dragonfly.Module.Levels
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
+            TheCoolOne.Body.ApplyForce(new Vector2(1, 0));
         }
     }
 }
