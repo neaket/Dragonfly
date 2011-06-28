@@ -30,7 +30,7 @@
       <Position X="-.9" Y="0"/>
     </RectangleElement>
 
-    <PolygonElement FillColor="#ffff00" BodyType="Dynamic" Vertices="0,0 1,0  1,1 0,1">
+    <PolygonElement FillColor="#ffff00" BodyType="Dynamic" Vertices="0,0 1,1 0,1" OutlineColor="#000" Rotation=".5" >
       <Position X="0" Y="-3"/>
     </PolygonElement>
     <!--<RectangleElement FillColor="#ff00ff" Width="." Height="1" BodyType="Static">

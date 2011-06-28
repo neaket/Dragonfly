@@ -80,25 +80,28 @@ namespace Dragonfly.Engine.Levels
                     {
                         case ElementType.Circle:
                             var circleEntity = physicsEntity as CircleElementEntity;
-                            body = BodyFactory.CreateCircle(_world, circleEntity.Radius, circleEntity.Density);
+                            body = BodyFactory.CreateCircle(_world, circleEntity.Radius, circleEntity.Density, physicsEntity.Position);
                             break;
                         case ElementType.Elipsis:
                             var elipsisEntity = physicsEntity as ElipsisElementEntity;
-                            body = BodyFactory.CreateEllipse(_world, elipsisEntity.Radius.X, elipsisEntity.Radius.Y, 8, elipsisEntity.Density);
+                            body = BodyFactory.CreateEllipse(_world, elipsisEntity.Radius.X, elipsisEntity.Radius.Y, 8, elipsisEntity.Density, physicsEntity.Position);
                             break;
                         case ElementType.Polygon:
                             var polygonEntity = physicsEntity as PolygonElementEntity;
-                            body = BodyFactory.CreatePolygon(_world, polygonEntity.Vertices, polygonEntity.Density);
+                            body = BodyFactory.CreatePolygon(_world, polygonEntity.Vertices, polygonEntity.Density, physicsEntity.Position);
                             break;
                         case ElementType.Rectangle:
                             var rectangleEntity = physicsEntity as RectangleElementEntity;
-                            body = BodyFactory.CreateRectangle(_world, rectangleEntity.Width, rectangleEntity.Height, rectangleEntity.Density);
+                            body = BodyFactory.CreateRectangle(_world, rectangleEntity.Width, rectangleEntity.Height, rectangleEntity.Density, physicsEntity.Position);
                             break;
                         default:
                             throw new NotSupportedException();
                     }
-                    body.Position = physicsEntity.Position;
                     body.BodyType = physicsEntity.BodyType;
+                    //body.Position = physicsEntity.Position;
+                    body.Rotation = physicsEntity.Rotation;
+                    
+                    //body.Inertia = 0.1f;
                     physicsEntity.Body = body;
 
                     if (physicsEntity.Name != null)
@@ -123,6 +126,7 @@ namespace Dragonfly.Engine.Levels
         public override void HandleInput(InputState input)
         {
             base.HandleInput(input);
+
         }
 
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)

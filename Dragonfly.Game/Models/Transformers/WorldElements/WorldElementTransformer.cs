@@ -18,6 +18,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
         public const string STR_OutlineColor = "OutlineColor";
         public const string STR_Material = "Material";
         public const string STR_Position = "Position";
+        public const string STR_Rotation = "Rotation";
 
         #region Instance
         
@@ -83,12 +84,20 @@ namespace Dragonfly.Models.Transformers.WorldElements
             XAttribute xAttribute;
             entity.Name = (xAttribute = xElement.Attribute(STR_Name)) != null ? (string)xAttribute : null;
             entity.Position = Vector2Transformer.Instance.ToEntity(xElement.Element(TransformerSettings.WorldNamespace + STR_Position));
+            
 
             xAttribute = xElement.Attribute(STR_FillColor);
 
             if (xAttribute != null)
             {
                 entity.FillColor = ColorTransformer.Instance.ToEntity(xAttribute);
+            }
+
+
+            xAttribute = xElement.Attribute(STR_Rotation);
+            if (xAttribute != null)
+            {
+                entity.Rotation = (float)xAttribute;
             }
 
             xAttribute = xElement.Attribute(STR_OutlineColor);
@@ -112,6 +121,7 @@ namespace Dragonfly.Models.Transformers.WorldElements
             }
 
             xElement.Add(Vector2Transformer.Instance.ToXElement(entity.Position, TransformerSettings.WorldNamespace + STR_Position));
+            xElement.Add(new XAttribute(STR_Rotation, entity.Rotation));
             xElement.Add(ColorTransformer.Instance.ToXAttribute(entity.FillColor, STR_FillColor));
             xElement.Add(ColorTransformer.Instance.ToXAttribute(entity.OutlineColor, STR_OutlineColor));
             xElement.Add(BodyTypeTransformer.Instance.ToXAttribute(entity.BodyType, STR_BodyType));

@@ -31,6 +31,8 @@ namespace Dragonfly.Engine.ScreenManager
         public readonly KeyboardState[] CurrentKeyboardStates;
         public readonly GamePadState[] CurrentGamePadStates;
 
+
+
         public readonly KeyboardState[] LastKeyboardStates;
         public readonly GamePadState[] LastGamePadStates;
 
@@ -39,6 +41,7 @@ namespace Dragonfly.Engine.ScreenManager
         public TouchCollection TouchState;
 
         public readonly List<GestureSample> Gestures = new List<GestureSample>();
+        
 
         #endregion
 

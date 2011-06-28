@@ -15,7 +15,7 @@ namespace Dragonfly.Models.Entities.WorldElements
         public Texture2D Texture2D { get; set; }
         public Vector2 Origin { get; set; }
         public abstract ElementType ElementType { get; }
-        private float _Density;
+        private float _Density = 1f;
         
 
         public float Density { 

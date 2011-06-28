@@ -49,6 +49,11 @@ namespace Dragonfly.Module.Levels
             
         }
 
+        public override void HandleInput(InputState input)
+        {
+            base.HandleInput(input);
+        }
+
 
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {

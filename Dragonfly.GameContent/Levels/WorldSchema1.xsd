@@ -108,6 +108,7 @@
       <xs:attribute name="FillColor" type="Color" use="optional" />
       <xs:attribute name="OutlineColor" type="Color" use="optional" />
       <xs:attribute name="BodyType" type="BodyType" use="required" />
+      <xs:attribute name="Rotation" type="xs:float" use="optional" />
     </xs:complexType>
 
   <xs:complexType name="RectangleElement">

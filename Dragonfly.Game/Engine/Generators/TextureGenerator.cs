@@ -36,8 +36,13 @@ namespace Dragonfly.Engine.Generators
                     throw new NotImplementedException();
                 case ElementType.Polygon:
                     PolygonElementEntity polygon = elementEntity as PolygonElementEntity;
-                    vertices = polygon.Vertices;
-                    polygon.Origin = vertices.GetCentroid();
+                    vertices = new Vertices(polygon.Vertices.Count);
+                    foreach (var vertex in polygon.Vertices)
+                    {
+                        vertices.Add(ConvertUnits.ToDisplayUnits(vertex));
+                    }
+
+                    polygon.Origin = polygon.Vertices.GetCentroid();
                     break;                    
                 case ElementType.Rectangle:
                     RectangleElementEntity rectangle = elementEntity as RectangleElementEntity;
