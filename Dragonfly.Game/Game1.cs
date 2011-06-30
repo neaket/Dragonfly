@@ -9,11 +9,11 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Media;
-using Dragonfly.Engine.ScreenManager;
-using Dragonfly.Module.Screens;
-using Dragonfly.Module.Levels;
+using Indicle.Dragonfly.Engine.ScreenManager;
+using Indicle.Dragonfly.Module.Screens;
+using Indicle.Dragonfly.Module.Levels;
 
-namespace Dragonfly.Module
+namespace Indicle.Dragonfly.Module
 {
     public class Game1 : Microsoft.Xna.Framework.Game
     {
@@ -33,13 +33,16 @@ namespace Dragonfly.Module
 #if WINDOWS_PHONE            
             graphics.IsFullScreen = true;
 #endif
+
+#if WINDOWS
+            IsMouseVisible = true;
+#endif
             screenController = new ScreenController(this);
 
             Components.Add(screenController);
 
             screenController.AddScreen(new BackgroundScreen(), null);
             screenController.AddScreen(new MainMenuScreen(), null);
-            //var b = new TestLevel1();
         }
 
         protected override void OnExiting(object sender, EventArgs args)

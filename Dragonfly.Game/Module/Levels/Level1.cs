@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using FarseerPhysics.Dynamics;
 using Microsoft.Xna.Framework;
-using Dragonfly.Models.Transformers.World;
+using Indicle.Dragonfly.Models.Transformers.World;
 using System.Xml.Linq;
-using Dragonfly.Models.Entities.WorldElements;
+using Indicle.Dragonfly.Models.Entities.WorldElements;
 using FarseerPhysics.Factories;
-using Dragonfly.Engine.Generators;
+using Indicle.Dragonfly.Engine.Generators;
 
-namespace Dragonfly.Module.Levels
+namespace Indicle.Dragonfly.Module.Levels
 {
     class Level1
     {

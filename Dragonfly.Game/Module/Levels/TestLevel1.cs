@@ -2,21 +2,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Dragonfly.Models.Transformers.World;
+using Indicle.Dragonfly.Models.Transformers.World;
 using System.Xml.Linq;
-using Dragonfly.Models.Entities.World;
+using Indicle.Dragonfly.Models.Entities.World;
 using FarseerPhysics.Dynamics;
-using Dragonfly.Models.Entities.WorldElements;
+using Indicle.Dragonfly.Models.Entities.WorldElements;
 using FarseerPhysics.Factories;
 using Microsoft.Xna.Framework;
-using Dragonfly.Engine.Renderer;
+using Indicle.Dragonfly.Engine.Renderer;
 using System.Diagnostics;
-using Dragonfly.Engine.ScreenManager;
-using Dragonfly.Models.Entities.Physics;
-using Dragonfly.Engine.Levels;
+using Indicle.Dragonfly.Engine.ScreenManager;
+using Indicle.Dragonfly.Models.Entities.Physics;
+using Indicle.Dragonfly.Engine.Levels;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Dragonfly.Module.Levels
+namespace Indicle.Dragonfly.Module.Levels
 {
     class TestLevel1 : GameLevel
     {

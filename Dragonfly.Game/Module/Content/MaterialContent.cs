@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
-namespace Dragonfly.Module.Content
+namespace Indicle.Dragonfly.Module.Content
 {
     class MaterialContent
     {

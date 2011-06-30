@@ -14,10 +14,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Input;
-using Dragonfly.Engine.ScreenManager;
+using Indicle.Dragonfly.Engine.ScreenManager;
 #endregion
 
-namespace Dragonfly.Module.Screens
+namespace Indicle.Dragonfly.Module.Screens
 {
     /// <summary>
     /// Base class for screens that contain a menu of options. The user can
@@ -100,6 +100,26 @@ namespace Dragonfly.Module.Screens
                 OnCancel(player);
             }
 
+            
+            MouseState mouseState = Mouse.GetState();
+            if (mouseState.LeftButton == ButtonState.Pressed)
+            {
+                // iterate the entries to see if any were tapped
+                for (int i = 0; i < menuEntries.Count; i++)
+                {
+                    MenuEntry menuEntry = menuEntries[i];
+
+                    if (GetMenuEntryHitBounds(menuEntry).Contains(new Point(mouseState.X, mouseState.Y)))
+                    {
+                        // select the entry. since gestures are only available on Windows Phone,
+                        // we can safely pass PlayerIndex.One to all entries since there is only
+                        // one player on Windows Phone.
+                        OnSelectEntry(i, PlayerIndex.One);
+                    }
+                }
+            }
+            
+
             // look for any taps that occurred and select any entries that were tapped
             foreach (GestureSample gesture in input.Gestures)
             {
@@ -124,6 +144,10 @@ namespace Dragonfly.Module.Screens
                 }
             }
         }
+
+
+
+
 
 
         /// <summary>

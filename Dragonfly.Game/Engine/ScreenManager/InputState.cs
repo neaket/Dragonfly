@@ -14,7 +14,7 @@ using Microsoft.Xna.Framework.Input.Touch;
 using System.Collections.Generic;
 #endregion
 
-namespace Dragonfly.Engine.ScreenManager
+namespace Indicle.Dragonfly.Engine.ScreenManager
 {
     /// <summary>
     /// Helper for reading input from keyboard, gamepad, and touch input. This class 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 
-namespace Dragonfly.Models.Transformers.Common
+namespace Indicle.Dragonfly.Models.Transformers.Common
 {
     public interface IEntityXElementTransformer<E> 
     {

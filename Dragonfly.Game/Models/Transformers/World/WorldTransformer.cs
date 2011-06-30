@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Dragonfly.Models.Entities.World;
+using Indicle.Dragonfly.Models.Entities.World;
 using System.Xml.Linq;
-using Dragonfly.Models.Transformers.Physics;
-using Dragonfly.Models.Transformers.Common;
-using Dragonfly.Models.Transformers.WorldElements;
+using Indicle.Dragonfly.Models.Transformers.Physics;
+using Indicle.Dragonfly.Models.Transformers.Common;
+using Indicle.Dragonfly.Models.Transformers.WorldElements;
 
-namespace Dragonfly.Models.Transformers.World
+namespace Indicle.Dragonfly.Models.Transformers.World
 {
     public class WorldTransformer : EntityXElementTransformer<WorldEntity>
     {

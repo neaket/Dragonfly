@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 
-namespace Dragonfly.Models.Entities.Physics
+namespace Indicle.Dragonfly.Models.Entities.Physics
 {
     public class PhysicsSettingsEntity
     {

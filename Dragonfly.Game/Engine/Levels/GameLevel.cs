@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-using Dragonfly.Models.Entities.World;
-using Dragonfly.Models.Transformers.World;
-using Dragonfly.Engine.Renderer;
+using Indicle.Dragonfly.Models.Entities.World;
+using Indicle.Dragonfly.Models.Transformers.World;
+using Indicle.Dragonfly.Engine.Renderer;
 using FarseerPhysics.Dynamics;
 using System.Diagnostics;
-using Dragonfly.Models.Entities.WorldElements;
+using Indicle.Dragonfly.Models.Entities.WorldElements;
 using FarseerPhysics.Factories;
-using Dragonfly.Engine.Generators;
+using Indicle.Dragonfly.Engine.Generators;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using Dragonfly.Engine.ScreenManager;
+using Indicle.Dragonfly.Engine.ScreenManager;
 
-namespace Dragonfly.Engine.Levels
+namespace Indicle.Dragonfly.Engine.Levels
 {
     class GameLevel : GameScreen
     {

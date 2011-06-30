@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
-using Dragonfly.Models.Entities.WorldElements;
-using Dragonfly.Models.Entities.World;
-using Dragonfly.Engine.Renderer.WorldElements;
+using Indicle.Dragonfly.Models.Entities.WorldElements;
+using Indicle.Dragonfly.Models.Entities.World;
+using Indicle.Dragonfly.Engine.Renderer.WorldElements;
 using Microsoft.Xna.Framework.Graphics;
-using Dragonfly.Engine.Renderers;
+using Indicle.Dragonfly.Engine.Renderers;
 using System.Diagnostics;
 
-namespace Dragonfly.Engine.Renderer
+namespace Indicle.Dragonfly.Engine.Renderer
 {
     class WorldRenderer
     {

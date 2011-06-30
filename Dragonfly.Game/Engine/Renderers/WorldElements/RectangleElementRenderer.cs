@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Dragonfly.Engine.Renderer.WorldElements
+namespace Indicle.Dragonfly.Engine.Renderer.WorldElements
 {
     class RectangleElementRenderer
     {

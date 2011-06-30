@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
-namespace Dragonfly.Models.Levels
+namespace Indicle.Dragonfly.Models.Levels
 {
     
     [XmlRootAttribute(ElementName = LevelConstants.DocumentNode, IsNullable = false)]

@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Dragonfly.Models.Entities.Physics;
-using Dragonfly.Models.Entities.WorldElements;
+using Indicle.Dragonfly.Models.Entities.Physics;
+using Indicle.Dragonfly.Models.Entities.WorldElements;
 
-namespace Dragonfly.Models.Entities.World
+namespace Indicle.Dragonfly.Models.Entities.World
 {
     public class WorldEntity
     {

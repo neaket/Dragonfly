@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Dragonfly.Models.Transformers.Exceptions
+namespace Indicle.Dragonfly.Models.Transformers.Exceptions
 {
     public class TransformerException : Exception
     {

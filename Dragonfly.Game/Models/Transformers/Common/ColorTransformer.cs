@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using System.Xml.Linq;
-using Dragonfly.Models.Transformers.Exceptions;
+using Indicle.Dragonfly.Models.Transformers.Exceptions;
 
-namespace Dragonfly.Models.Transformers.Common
+namespace Indicle.Dragonfly.Models.Transformers.Common
 {
     public class ColorTransformer
     {

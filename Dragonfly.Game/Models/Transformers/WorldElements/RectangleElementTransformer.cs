@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Dragonfly.Models.Entities.WorldElements;
-using Dragonfly.Models.Transformers.Common;
+using Indicle.Dragonfly.Models.Entities.WorldElements;
+using Indicle.Dragonfly.Models.Transformers.Common;
 using System.Xml.Linq;
-using Dragonfly.Models.Transformers.Exceptions;
+using Indicle.Dragonfly.Models.Transformers.Exceptions;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Dragonfly.Models.Transformers.WorldElements
+namespace Indicle.Dragonfly.Models.Transformers.WorldElements
 {
     public class RectangleElementTransformer : EntityXElementTransformer<RectangleElementEntity>, IWorldElementTransformer
     {

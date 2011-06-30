@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Dragonfly.Models.Entities.WorldElements
+namespace Indicle.Dragonfly.Models.Entities.WorldElements
 {
     public class CircleElementEntity : PhysicsWorldElementEntity
     {

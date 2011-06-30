@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using System.Xml.Linq;
 
-namespace Dragonfly.Models.Transformers.Common
+namespace Indicle.Dragonfly.Models.Transformers.Common
 {
     public class MaterialTransformer : IEntityXAttributeTransformer<Texture2D>
     {

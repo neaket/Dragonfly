@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Dragonfly.Models.Common
+namespace Indicle.Dragonfly.Models.Common
 {
     class CommonConstants
     {

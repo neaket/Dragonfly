@@ -12,7 +12,7 @@ using System;
 using Microsoft.Xna.Framework;
 #endregion
 
-namespace Dragonfly.Module.Screens
+namespace Indicle.Dragonfly.Module.Screens
 {
     /// <summary>
     /// Custom event argument which includes the index of the player who

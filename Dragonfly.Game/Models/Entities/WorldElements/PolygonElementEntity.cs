@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using FarseerPhysics.Common;
 
-namespace Dragonfly.Models.Entities.WorldElements
+namespace Indicle.Dragonfly.Models.Entities.WorldElements
 {
     public class PolygonElementEntity : PhysicsWorldElementEntity
     {

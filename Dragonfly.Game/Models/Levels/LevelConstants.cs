@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Dragonfly.Models.Levels
+namespace Indicle.Dragonfly.Models.Levels
 {
     static class LevelConstants
     {

@@ -30,8 +30,11 @@
       <Position X="-.9" Y="0"/>
     </RectangleElement>
 
-    <PolygonElement FillColor="#ffff00" BodyType="Dynamic" Vertices="0,0 1,1 0,1" OutlineColor="#000" Rotation=".5" >
+    <!--<PolygonElement FillColor="#ffff00" BodyType="Dynamic" Vertices="0,0 1,1 0,1" OutlineColor="#000" Rotation=".5" >
       <Position X="0" Y="-3"/>
+    </PolygonElement>-->
+    <PolygonElement FillColor="#ffff00" BodyType="Dynamic" Vertices=".4,.6 .4,.20 .15,.24 .16,.17 .19,.13 .26,.12 .36,.12 .37,.6" OutlineColor="#000" >
+      <Position X="0" Y="-1"/>
     </PolygonElement>
     <!--<RectangleElement FillColor="#ff00ff" Width="." Height="1" BodyType="Static">
       <Position X="0" Y="0"/>

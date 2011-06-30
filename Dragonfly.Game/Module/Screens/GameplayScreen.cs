@@ -14,11 +14,11 @@
 //using Microsoft.Xna.Framework.Content;
 //using Microsoft.Xna.Framework.Graphics;
 //using Microsoft.Xna.Framework.Input;
-//using Dragonfly.Engine.ScreenManager;
-//using Dragonfly.Models.Entities.World;
+//using Indicle.Dragonfly.Engine.ScreenManager;
+//using Indicle.Dragonfly.Models.Entities.World;
 //#endregion
 
-//namespace Dragonfly.Module.Screens
+//namespace Indicle.Dragonfly.Module.Screens
 //{
 //    /// <summary>
 //    /// This screen implements the actual game logic. It is just a

@@ -9,12 +9,12 @@
 
 #region Using Statements
 using Microsoft.Xna.Framework;
-using Dragonfly.Module.Levels;
+using Indicle.Dragonfly.Module.Levels;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 #endregion
 
-namespace Dragonfly.Module.Screens
+namespace Indicle.Dragonfly.Module.Screens
 {
     /// <summary>
     /// The main menu screen is the first thing displayed when the game starts up.

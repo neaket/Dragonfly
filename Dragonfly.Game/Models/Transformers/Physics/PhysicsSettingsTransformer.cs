@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-using Dragonfly.Models.Entities.Physics;
-using Dragonfly.Models.Transformers.Common;
+using Indicle.Dragonfly.Models.Entities.Physics;
+using Indicle.Dragonfly.Models.Transformers.Common;
 
-namespace Dragonfly.Models.Transformers.Physics
+namespace Indicle.Dragonfly.Models.Transformers.Physics
 {
     public class PhysicsSettingsTransformer : EntityXElementTransformer<PhysicsSettingsEntity>
     {

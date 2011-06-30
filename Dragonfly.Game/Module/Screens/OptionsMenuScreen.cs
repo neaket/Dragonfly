@@ -11,7 +11,7 @@
 using Microsoft.Xna.Framework;
 #endregion
 
-namespace Dragonfly.Module.Screens
+namespace Indicle.Dragonfly.Module.Screens
 {
     /// <summary>
     /// The options screen is brought up over the top of the main menu

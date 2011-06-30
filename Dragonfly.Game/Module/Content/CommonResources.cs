@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Dragonfly.Module.Content
+namespace Indicle.Dragonfly.Module.Content
 {
     class CommonResources
     {

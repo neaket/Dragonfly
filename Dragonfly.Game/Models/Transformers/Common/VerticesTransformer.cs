@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Xna.Framework;
 using System.Xml.Linq;
 
-namespace Dragonfly.Models.Transformers.Common
+namespace Indicle.Dragonfly.Models.Transformers.Common
 {
     class VerticesTransformer : IEntityXAttributeTransformer<Vertices>
     {

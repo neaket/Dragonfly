@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using System.Xml.Linq;
-using Dragonfly.Models.Transformers.Common;
+using Indicle.Dragonfly.Models.Transformers.Common;
 using Microsoft.Xna.Framework;
 
-namespace Dragonfly.Tests.Tests.Models.Common
+namespace Indicle.Dragonfly.Tests.Tests.Models.Common
 {
     [TestFixture]
     class ColorTests

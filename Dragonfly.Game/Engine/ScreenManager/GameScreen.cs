@@ -14,7 +14,7 @@ using Microsoft.Xna.Framework.Input.Touch;
 using System.IO;
 #endregion
 
-namespace Dragonfly.Engine.ScreenManager
+namespace Indicle.Dragonfly.Engine.ScreenManager
 {
     /// <summary>
     /// Enum describes the screen transition state.

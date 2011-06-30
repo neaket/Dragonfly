@@ -7,10 +7,10 @@ using FarseerPhysics.Common;
 using Microsoft.Xna.Framework;
 using FarseerPhysics.Common.Decomposition;
 using FarseerPhysics.Collision;
-using Dragonfly.Models.Entities.WorldElements;
-using Dragonfly.Engine.Renderers;
+using Indicle.Dragonfly.Models.Entities.WorldElements;
+using Indicle.Dragonfly.Engine.Renderers;
 
-namespace Dragonfly.Engine.Generators
+namespace Indicle.Dragonfly.Engine.Generators
 {
     class TextureGenerator
     {

@@ -5,15 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 using System.Xml.Schema;
-using Dragonfly.Models.Entities.Physics;
-using Dragonfly.Models.Entities.World;
-using Dragonfly.Models.Transformers.World;
+using Indicle.Dragonfly.Models.Entities.Physics;
+using Indicle.Dragonfly.Models.Entities.World;
+using Indicle.Dragonfly.Models.Transformers.World;
 using Microsoft.Xna.Framework;
 using NUnit.Framework;
-using Dragonfly.Models.Entities.WorldElements;
-using Dragonfly.Models.Transformers.Common;
+using Indicle.Dragonfly.Models.Entities.WorldElements;
+using Indicle.Dragonfly.Models.Transformers.Common;
 
-namespace Dragonfly.Tests.Models
+namespace Indicle.Dragonfly.Tests.Models
 {
     [TestFixture]
     public class WorldTests

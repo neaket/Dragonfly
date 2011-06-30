@@ -11,10 +11,10 @@
 using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Dragonfly.Engine.ScreenManager;
+using Indicle.Dragonfly.Engine.ScreenManager;
 #endregion
 
-namespace Dragonfly.Module.Screens
+namespace Indicle.Dragonfly.Module.Screens
 {
     /// <summary>
     /// Helper class represents a single entry in a MenuScreen. By default this

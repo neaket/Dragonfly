@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using FarseerPhysics.Dynamics;
-using Dragonfly.Models.Transformers.Common;
+using Indicle.Dragonfly.Models.Transformers.Common;
 using System.Xml.Linq;
 
-namespace Dragonfly.Models.Transformers.WorldElements
+namespace Indicle.Dragonfly.Models.Transformers.WorldElements
 {
     class BodyTypeTransformer
     {

@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using FarseerPhysics.Dynamics;
 
-namespace Dragonfly.Engine.Renderers
+namespace Indicle.Dragonfly.Engine.Renderers
 {
     public class Camera2D
     {

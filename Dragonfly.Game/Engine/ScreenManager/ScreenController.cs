@@ -17,10 +17,10 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input.Touch;
 using System.IO;
 using System.IO.IsolatedStorage;
-using Dragonfly.Module.Content;
+using Indicle.Dragonfly.Module.Content;
 #endregion
 
-namespace Dragonfly.Engine.ScreenManager
+namespace Indicle.Dragonfly.Engine.ScreenManager
 {
     /// <summary>
     /// The screen manager is a component which manages one or more GameScreen

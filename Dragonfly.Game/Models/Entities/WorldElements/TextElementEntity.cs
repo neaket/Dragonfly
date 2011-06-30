@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Dragonfly.Models.Entities.WorldElements
+namespace Indicle.Dragonfly.Models.Entities.WorldElements
 {
     public class TextElementEntity : IWorldElementEntity
     {

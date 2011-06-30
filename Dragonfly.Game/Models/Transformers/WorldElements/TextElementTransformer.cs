@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-using Dragonfly.Models.Entities.WorldElements;
-using Dragonfly.Module.Content;
-using Dragonfly.Models.Transformers.Common;
+using Indicle.Dragonfly.Models.Entities.WorldElements;
+using Indicle.Dragonfly.Module.Content;
+using Indicle.Dragonfly.Models.Transformers.Common;
 
-namespace Dragonfly.Models.Transformers.WorldElements
+namespace Indicle.Dragonfly.Models.Transformers.WorldElements
 {
     public class TextElementTransformer : IWorldElementTransformer
     {

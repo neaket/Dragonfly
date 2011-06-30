@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using FarseerPhysics.Dynamics;
 using System.Xml.Serialization;
 
-namespace Dragonfly.Models.Entities.WorldElements
+namespace Indicle.Dragonfly.Models.Entities.WorldElements
 {
     public abstract class PhysicsWorldElementEntity : IWorldElementEntity
     {

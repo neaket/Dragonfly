@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Dragonfly.Models.Transformers.Common;
-using Dragonfly.Models.Entities.WorldElements;
+using Indicle.Dragonfly.Models.Transformers.Common;
+using Indicle.Dragonfly.Models.Entities.WorldElements;
 using System.Xml.Linq;
 using Microsoft.Xna.Framework;
-using Dragonfly.Models.Transformers.Exceptions;
+using Indicle.Dragonfly.Models.Transformers.Exceptions;
 
-namespace Dragonfly.Models.Transformers.WorldElements
+namespace Indicle.Dragonfly.Models.Transformers.WorldElements
 {
     public class WorldElementTransformer : IEntityXElementTransformer<PhysicsWorldElementEntity>
     {

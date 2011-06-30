@@ -12,10 +12,10 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using Dragonfly.Engine.ScreenManager;
+using Indicle.Dragonfly.Engine.ScreenManager;
 #endregion
 
-namespace Dragonfly.Module.Screens
+namespace Indicle.Dragonfly.Module.Screens
 {
     /// <summary>
     /// A popup message box screen, used to display "are you sure?"

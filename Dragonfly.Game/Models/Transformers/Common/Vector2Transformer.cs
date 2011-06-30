@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml.Linq;
 using Microsoft.Xna.Framework;
 
-namespace Dragonfly.Models.Transformers.Common
+namespace Indicle.Dragonfly.Models.Transformers.Common
 {
     public class Vector2Transformer
     {

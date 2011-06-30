@@ -1,6 +1,6 @@
 using System;
 
-namespace Dragonfly.Module
+namespace Indicle.Dragonfly.Module
 {
 #if WINDOWS || XBOX
     static class Program
