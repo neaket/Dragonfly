@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
+using Indicle.Dragonfly;
 using Indicle.Dragonfly.Models.Entities.World;
 using Indicle.Dragonfly.Models.Transformers.World;
 using Indicle.Dragonfly.Engine.Renderer;
@@ -14,11 +15,13 @@ using Indicle.Dragonfly.Engine.Generators;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Indicle.Dragonfly.Engine.ScreenManager;
+using Indicle.Logging;
 
 namespace Indicle.Dragonfly.Engine.Levels
 {
-    class GameLevel : GameScreen
+    class GameLevel : GamePage
     {
+        private static Logger log = new Logger(typeof(GameLevel));
         protected string _levelXml;
         protected WorldEntity _worldEntity;
         protected WorldRenderer _worldRenderer;
@@ -142,7 +145,7 @@ namespace Indicle.Dragonfly.Engine.Levels
             if (!gcTest.IsAlive)
             {
                 gcCount++;
-                Debug.WriteLine(String.Format("Garbage has been collected {0} times.", gcCount));
+                log.InfoFormat("Garbage has been collected {0} times.", gcCount);
 
                 gcTest = new WeakReference(new object());
             }

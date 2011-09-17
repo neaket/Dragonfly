@@ -42,15 +42,6 @@ namespace Indicle.Dragonfly.Models.Transformers.WorldElements
             throw new NotImplementedException();
         }
 
-        public IWorldElementEntity ToEntity(XElement xElement)
-        {
-            CircleElementEntity entity = new CircleElementEntity();
-
-            ToEntity(xElement, entity);
-
-            return entity;
-        }
-
         public XElement FromEntity(IWorldElementEntity entity)
         {
             throw new NotImplementedException();

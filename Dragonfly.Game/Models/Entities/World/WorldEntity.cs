@@ -60,7 +60,7 @@ namespace Indicle.Dragonfly.Models.Entities.World
         public override int GetHashCode()
         {
             throw new NotImplementedException();
-            return base.GetHashCode();
+            //return base.GetHashCode();
            
         }
     }

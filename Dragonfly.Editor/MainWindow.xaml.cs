@@ -11,6 +11,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Indicle.Dragonfly.Models.Entities.WorldElements;
+using FarseerPhysics.Common;
+using Microsoft.Xna.Framework;
+using Indicle.Dragonfly.Models.Transformers.WorldElements;
+using System.Xml.Linq;
 
 namespace Indicle.Dragonfly.Editor
 {
@@ -38,12 +43,18 @@ namespace Indicle.Dragonfly.Editor
 
                 string output = "";
 
+                PolygonElementEntity poly = new PolygonElementEntity();
+
+                poly.Vertices = new Vertices(polygon.Points.Count);
                 foreach (var p in polygon.Points)
                 {
-                    output += String.Format("{0},{1} ", p.X, p.Y);
+                    poly.Vertices.Add(new Vector2((float)p.X, (float)p.Y));
                 }
 
-                consoleOutput.Text = output;
+                XElement xElement = new XElement(PolygonElementTransformer.STR_PolygonElement);
+                PolygonElementTransformer.Instance.ToXElement(poly, xElement);
+
+                consoleOutput.Text = xElement.ToString();
             }
         }
 

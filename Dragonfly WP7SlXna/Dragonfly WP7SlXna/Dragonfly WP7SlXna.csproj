@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4FFC9A40-1932-4F71-96FF-F591AAA139C0}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dragonfly_WP7SlXna</RootNamespace>
+    <AssemblyName>Dragonfly WP7SlXna</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Dragonfly_WP7SlXna.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Dragonfly_WP7SlXna.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Microsoft.Xna.Framework" />
+    <Reference Include="Microsoft.Xna.Framework.Game" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics" />
+    <Reference Include="Microsoft.Xna.Framework.Input.Touch" />
+    <Reference Include="Microsoft.Xna.Framework.Interop" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppServiceProvider.cs" />
+    <Compile Include="Engine\Generators\TextureGenerator.cs" />
+    <Compile Include="Engine\Levels\GameLevel.cs" />
+    <Compile Include="Engine\Loader\PolygonElementLoader.cs" />
+    <Compile Include="Engine\Loader\RectangleElementLoader.cs" />
+    <Compile Include="Engine\Logging\Logger.cs" />
+    <Compile Include="Engine\Renderers\Camera2D.cs" />
+    <Compile Include="Engine\Renderers\ConvertUnits.cs" />
+    <Compile Include="Engine\Renderers\WorldRenderer.cs" />
+    <Compile Include="Engine\ScreenManager\GameScreen.cs" />
+    <Compile Include="Engine\ScreenManager\InputState.cs" />
+    <Compile Include="Engine\ScreenManager\ScreenController.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Common\CommonConstants.cs" />
+    <Compile Include="Models\Entities\Physics\PhysicsSettingsEntity.cs" />
+    <Compile Include="Models\Entities\WorldElements\CircleElementEntity.cs" />
+    <Compile Include="Models\Entities\WorldElements\ElipsisElementEntity.cs" />
+    <Compile Include="Models\Entities\WorldElements\IWorldElementEntity.cs" />
+    <Compile Include="Models\Entities\WorldElements\PolygonElementEntity.cs" />
+    <Compile Include="Models\Entities\WorldElements\RectangleElementEntity.cs" />
+    <Compile Include="Models\Entities\WorldElements\TextElementEntity.cs" />
+    <Compile Include="Models\Entities\WorldElements\WorldElementEntity.cs" />
+    <Compile Include="Models\Entities\World\WorldEntity.cs" />
+    <Compile Include="Models\Entities\World\WorldInfoEntity.cs" />
+    <Compile Include="Models\Levels\IGameElement.cs" />
+    <Compile Include="Models\Levels\IXmlContent.cs" />
+    <Compile Include="Models\Levels\LevelConstants.cs" />
+    <Compile Include="Models\Levels\LevelModel.cs" />
+    <Compile Include="Models\Transformers\Common\ColorTransformer.cs" />
+    <Compile Include="Models\Transformers\Common\EntityXAttributeTransformer.cs" />
+    <Compile Include="Models\Transformers\Common\EntityXElementTransformer.cs" />
+    <Compile Include="Models\Transformers\Common\IEntityXAttributeTransformer.cs" />
+    <Compile Include="Models\Transformers\Common\IEntityXElementTransformer.cs" />
+    <Compile Include="Models\Transformers\Common\MaterialTransformer.cs" />
+    <Compile Include="Models\Transformers\Common\StringTransformer.cs" />
+    <Compile Include="Models\Transformers\Common\TransformerSettings.cs" />
+    <Compile Include="Models\Transformers\Common\TransformerSetup.cs" />
+    <Compile Include="Models\Transformers\Common\Vector2Transformer.cs" />
+    <Compile Include="Models\Transformers\Common\VerticesTransformer.cs" />
+    <Compile Include="Models\Transformers\Exceptions\TransformerException.cs" />
+    <Compile Include="Models\Transformers\Physics\PhysicsSettingsTransformer.cs" />
+    <Compile Include="Models\Transformers\WorldElements\BodyTypeTransformer.cs" />
+    <Compile Include="Models\Transformers\WorldElements\CircleElementTransformer.cs" />
+    <Compile Include="Models\Transformers\WorldElements\ElipsisElementTransformer.cs" />
+    <Compile Include="Models\Transformers\WorldElements\IWorldElementTransformer.cs" />
+    <Compile Include="Models\Transformers\WorldElements\PolygonElementTransformer.cs" />
+    <Compile Include="Models\Transformers\WorldElements\RectangleElementTransformer.cs" />
+    <Compile Include="Models\Transformers\WorldElements\TextElementTransformer.cs" />
+    <Compile Include="Models\Transformers\WorldElements\WorldElementTransformer.cs" />
+    <Compile Include="Models\Transformers\World\WorldInfoTransformer.cs" />
+    <Compile Include="Models\Transformers\World\WorldTransformer.cs" />
+    <Compile Include="Module\Content\CommonResources.cs" />
+    <Compile Include="Module\Content\MaterialContent.cs" />
+    <Compile Include="Module\Content\MenuResources.cs" />
+    <Compile Include="Module\Levels\Level1.cs" />
+    <Compile Include="Module\Levels\TestLevel1.cs" />
+    <Compile Include="Module\Screens\BackgroundScreen.cs" />
+    <Compile Include="Module\Screens\GameplayScreen.cs" />
+    <Compile Include="Module\Screens\LoadingScreen.cs" />
+    <Compile Include="Module\Screens\MainMenuScreen.cs" />
+    <Compile Include="Module\Screens\MenuEntry.cs" />
+    <Compile Include="Module\Screens\MenuScreen.cs" />
+    <Compile Include="Module\Screens\MessageBoxScreen.cs" />
+    <Compile Include="Module\Screens\OptionsMenuScreen.cs" />
+    <Compile Include="Module\Screens\PlayerIndexEventArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GamePage.xaml.cs">
+      <DependentUpon>GamePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Farseer Physics Engine 3.3 XNA\Farseer Physics XNA WP7.csproj">
+      <Project>{AA6CB78E-9484-4843-8613-54CD2BF1E948}</Project>
+      <Name>Farseer Physics XNA WP7</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dragonfly WP7SlXnaLib\Dragonfly WP7SlXnaLib.csproj">
+      <Name>Dragonfly_WP7SlXnaLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Module\Common\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  -->
+  <ProjectExtensions />
+</Project>

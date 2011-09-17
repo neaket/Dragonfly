@@ -54,8 +54,8 @@ namespace Indicle.Dragonfly.Module.Screens
         /// </summary>
         void PlayGameMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
-            LoadingScreen.Load(ScreenManager, true, e.PlayerIndex,
-                               new TestLevel1(new Dictionary<string, Texture2D>()));
+            //LoadingScreen.Load(ScreenManager, true, e.PlayerIndex,
+           //                    new TestLevel1(new Dictionary<string, Texture2D>()));
         }
 
 

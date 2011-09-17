@@ -9,7 +9,7 @@ namespace Indicle.Dragonfly.Module.Content
 {
     static class MenuResources
     {
-        private static string SubDir = @"menu\";
+        //private static string SubDir = @"menu\";
         public static SpriteFont MenuFont { get; private set; }
 
         public static void LoadContent(ContentManager content)

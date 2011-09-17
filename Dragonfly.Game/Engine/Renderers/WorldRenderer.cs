@@ -5,7 +5,6 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Indicle.Dragonfly.Models.Entities.WorldElements;
 using Indicle.Dragonfly.Models.Entities.World;
-using Indicle.Dragonfly.Engine.Renderer.WorldElements;
 using Microsoft.Xna.Framework.Graphics;
 using Indicle.Dragonfly.Engine.Renderers;
 using System.Diagnostics;
@@ -15,13 +14,11 @@ namespace Indicle.Dragonfly.Engine.Renderer
     class WorldRenderer
     {
         protected WorldEntity _WorldEntity;
-        protected CircleElementRenderer _CircleElementRenderer;
         protected Camera2D _camera;
 
         public WorldRenderer(GraphicsDevice graphicsDevice, WorldEntity worldEntity)
         {
             _WorldEntity = worldEntity;
-            _CircleElementRenderer = new CircleElementRenderer();
             _camera = new Camera2D(graphicsDevice);
 
         }
